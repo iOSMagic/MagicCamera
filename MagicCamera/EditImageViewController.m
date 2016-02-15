@@ -9,6 +9,7 @@
 #import "EditImageViewController.h"
 
 @interface EditImageViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -17,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    _imageView.image = _originalImage;
 }
 
 - (void)didReceiveMemoryWarning {

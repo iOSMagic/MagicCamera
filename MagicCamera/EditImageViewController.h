@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface EditImageViewController : UIViewController
-@property (nonatomic,strong) UIImage *image;
+@property (nonatomic,strong) UIImage *originalImage;
 @end

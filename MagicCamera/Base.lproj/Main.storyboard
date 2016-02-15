@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="-499" y="395"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Image View Controller-->
         <scene sceneID="pUO-ep-m7m">
             <objects>
-                <viewController id="vS1-Ty-Rlb" sceneMemberID="viewController">
+                <viewController id="vS1-Ty-Rlb" customClass="EditImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qI3-hN-jQb"/>
                         <viewControllerLayoutGuide type="bottom" id="cVh-aM-Gzr"/>
@@ -54,8 +54,22 @@
                     <view key="view" contentMode="scaleToFill" id="SDR-hb-g54">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xw3-zx-DQQ">
+                                <rect key="frame" x="20" y="84" width="560" height="466"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Xw3-zx-DQQ" secondAttribute="trailing" constant="20" id="51m-7T-MeW"/>
+                            <constraint firstItem="Xw3-zx-DQQ" firstAttribute="top" secondItem="qI3-hN-jQb" secondAttribute="bottom" constant="20" id="KIP-eX-k0t"/>
+                            <constraint firstItem="Xw3-zx-DQQ" firstAttribute="leading" secondItem="SDR-hb-g54" secondAttribute="leading" constant="20" id="b7d-lH-VjT"/>
+                            <constraint firstItem="cVh-aM-Gzr" firstAttribute="top" secondItem="Xw3-zx-DQQ" secondAttribute="bottom" constant="50" id="iXm-is-a8r"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Xw3-zx-DQQ" id="Oik-rY-5pM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7m-HY-uG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
