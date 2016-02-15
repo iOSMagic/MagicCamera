@@ -15,6 +15,7 @@
 		E186D99A1C71711C00392C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E186D9991C71711C00392C5B /* Assets.xcassets */; };
 		E186D99D1C71711C00392C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E186D99B1C71711C00392C5B /* LaunchScreen.storyboard */; };
 		E186DBE71C71AC9D00392C5B /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186DBE61C71AC9D00392C5B /* GPUImage.framework */; };
+		E186DBEA1C71B0FC00392C5B /* EditImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBE91C71B0FC00392C5B /* EditImageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,8 @@
 		E186D99C1C71711C00392C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E186D99E1C71711C00392C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E186DBE61C71AC9D00392C5B /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
+		E186DBE81C71B0FC00392C5B /* EditImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageViewController.h; sourceTree = "<group>"; };
+		E186DBE91C71B0FC00392C5B /* EditImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditImageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +97,8 @@
 				E186D98E1C71711C00392C5B /* AppDelegate.m */,
 				E186D9901C71711C00392C5B /* ViewController.h */,
 				E186D9911C71711C00392C5B /* ViewController.m */,
+				E186DBE81C71B0FC00392C5B /* EditImageViewController.h */,
+				E186DBE91C71B0FC00392C5B /* EditImageViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				E186D9921C71711C00392C5B /* ViewController.m in Sources */,
 				E186D98F1C71711C00392C5B /* AppDelegate.m in Sources */,
 				E186D9981C71711C00392C5B /* MagicCamera.xcdatamodeld in Sources */,
+				E186DBEA1C71B0FC00392C5B /* EditImageViewController.m in Sources */,
 				E186D98C1C71711C00392C5B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
