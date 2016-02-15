@@ -16,7 +16,20 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6D-op-1v9">
+                                <rect key="frame" x="270" y="285" width="60" height="30"/>
+                                <state key="normal" title="选择图片"/>
+                                <connections>
+                                    <action selector="pickPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V28-Yi-Q57"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k6D-op-1v9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5C9-Cx-Ra8"/>
+                            <constraint firstItem="k6D-op-1v9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PfE-pC-NHN"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0tm-Wf-lVR"/>
                     <connections>
@@ -46,7 +59,7 @@
         <!--Edit Image View Controller-->
         <scene sceneID="pUO-ep-m7m">
             <objects>
-                <viewController id="vS1-Ty-Rlb" customClass="EditImageViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vS1-Ty-Rlb" customClass="EditImageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qI3-hN-jQb"/>
                         <viewControllerLayoutGuide type="bottom" id="cVh-aM-Gzr"/>
@@ -55,20 +68,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xw3-zx-DQQ">
-                                <rect key="frame" x="20" y="84" width="560" height="466"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="WkM-d5-xro">
+                                <rect key="frame" x="0.0" y="84" width="600" height="436"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Xw3-zx-DQQ" secondAttribute="trailing" constant="20" id="51m-7T-MeW"/>
-                            <constraint firstItem="Xw3-zx-DQQ" firstAttribute="top" secondItem="qI3-hN-jQb" secondAttribute="bottom" constant="20" id="KIP-eX-k0t"/>
-                            <constraint firstItem="Xw3-zx-DQQ" firstAttribute="leading" secondItem="SDR-hb-g54" secondAttribute="leading" constant="20" id="b7d-lH-VjT"/>
-                            <constraint firstItem="cVh-aM-Gzr" firstAttribute="top" secondItem="Xw3-zx-DQQ" secondAttribute="bottom" constant="50" id="iXm-is-a8r"/>
+                            <constraint firstItem="WkM-d5-xro" firstAttribute="top" secondItem="qI3-hN-jQb" secondAttribute="bottom" constant="20" id="LTS-QS-rbz"/>
+                            <constraint firstItem="cVh-aM-Gzr" firstAttribute="top" secondItem="WkM-d5-xro" secondAttribute="bottom" constant="80" id="Swr-Vi-YjL"/>
+                            <constraint firstAttribute="trailing" secondItem="WkM-d5-xro" secondAttribute="trailing" id="UAm-M6-gcc"/>
+                            <constraint firstItem="WkM-d5-xro" firstAttribute="leading" secondItem="SDR-hb-g54" secondAttribute="leading" id="mLo-Uz-JVz"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="imageView" destination="Xw3-zx-DQQ" id="Oik-rY-5pM"/>
+                        <outlet property="scrollView" destination="WkM-d5-xro" id="P3o-Xx-vJd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7m-HY-uG1" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -8,8 +8,10 @@
 
 #import "EditImageViewController.h"
 
-@interface EditImageViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@interface EditImageViewController () <UIScrollViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (nonatomic,strong) UIImageView *imageView;
 
 @end
 
@@ -19,12 +21,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    
+
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    self.imageView = [[UIImageView alloc] initWithFrame:_scrollView.bounds];
+    [_scrollView addSubview:_imageView];
+    _scrollView.delegate = self;
+    _scrollView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = _originalImage;
+    _scrollView.contentSize = _scrollView.bounds.size;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - UIResponder
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    
+}
+
+#pragma mark - UIScrollViewDelegate
+- (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return _imageView;
 }
 
 /*
