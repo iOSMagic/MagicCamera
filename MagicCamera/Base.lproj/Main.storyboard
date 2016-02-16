@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,18 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6D-op-1v9">
-                                <rect key="frame" x="270" y="285" width="60" height="30"/>
-                                <state key="normal" title="选择图片"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iz2-lp-LEa">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="jyJ-eo-Zy5">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jyJ-eo-Zy5" id="8Fj-eu-5Ge">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="pickPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V28-Yi-Q57"/>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Iu0-qE-Vq8"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="RIP-a7-rsQ"/>
                                 </connections>
-                            </button>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="k6D-op-1v9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5C9-Cx-Ra8"/>
-                            <constraint firstItem="k6D-op-1v9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PfE-pC-NHN"/>
+                            <constraint firstItem="iz2-lp-LEa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1ZJ-QS-hSx"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="iz2-lp-LEa" secondAttribute="bottom" id="frN-rd-uXu"/>
+                            <constraint firstItem="iz2-lp-LEa" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hfe-Wt-PHz"/>
+                            <constraint firstAttribute="trailing" secondItem="iz2-lp-LEa" secondAttribute="trailing" id="nHh-BR-c6r"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0tm-Wf-lVR"/>

@@ -16,6 +16,10 @@
 		E186D99D1C71711C00392C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E186D99B1C71711C00392C5B /* LaunchScreen.storyboard */; };
 		E186DBE71C71AC9D00392C5B /* GPUImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E186DBE61C71AC9D00392C5B /* GPUImage.framework */; };
 		E186DBEA1C71B0FC00392C5B /* EditImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBE91C71B0FC00392C5B /* EditImageViewController.m */; };
+		E186DBED1C72C9AE00392C5B /* EnhanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBEC1C72C9AE00392C5B /* EnhanceViewController.m */; };
+		E186DBF01C72C9DD00392C5B /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBEF1C72C9DD00392C5B /* FilterViewController.m */; };
+		E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF21C72C9F400392C5B /* MosaicViewController.m */; };
+		E186DBF61C72CA0700392C5B /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF51C72CA0700392C5B /* FrameViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,14 @@
 		E186DBE61C71AC9D00392C5B /* GPUImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPUImage.framework; sourceTree = "<group>"; };
 		E186DBE81C71B0FC00392C5B /* EditImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditImageViewController.h; sourceTree = "<group>"; };
 		E186DBE91C71B0FC00392C5B /* EditImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditImageViewController.m; sourceTree = "<group>"; };
+		E186DBEB1C72C9AE00392C5B /* EnhanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnhanceViewController.h; sourceTree = "<group>"; };
+		E186DBEC1C72C9AE00392C5B /* EnhanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnhanceViewController.m; sourceTree = "<group>"; };
+		E186DBEE1C72C9DD00392C5B /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		E186DBEF1C72C9DD00392C5B /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		E186DBF11C72C9F400392C5B /* MosaicViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MosaicViewController.h; sourceTree = "<group>"; };
+		E186DBF21C72C9F400392C5B /* MosaicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicViewController.m; sourceTree = "<group>"; };
+		E186DBF41C72CA0700392C5B /* FrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
+		E186DBF51C72CA0700392C5B /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +111,14 @@
 				E186D9911C71711C00392C5B /* ViewController.m */,
 				E186DBE81C71B0FC00392C5B /* EditImageViewController.h */,
 				E186DBE91C71B0FC00392C5B /* EditImageViewController.m */,
+				E186DBEB1C72C9AE00392C5B /* EnhanceViewController.h */,
+				E186DBEC1C72C9AE00392C5B /* EnhanceViewController.m */,
+				E186DBEE1C72C9DD00392C5B /* FilterViewController.h */,
+				E186DBEF1C72C9DD00392C5B /* FilterViewController.m */,
+				E186DBF11C72C9F400392C5B /* MosaicViewController.h */,
+				E186DBF21C72C9F400392C5B /* MosaicViewController.m */,
+				E186DBF41C72CA0700392C5B /* FrameViewController.h */,
+				E186DBF51C72CA0700392C5B /* FrameViewController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -194,8 +214,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E186D9921C71711C00392C5B /* ViewController.m in Sources */,
+				E186DBED1C72C9AE00392C5B /* EnhanceViewController.m in Sources */,
 				E186D98F1C71711C00392C5B /* AppDelegate.m in Sources */,
 				E186D9981C71711C00392C5B /* MagicCamera.xcdatamodeld in Sources */,
+				E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */,
+				E186DBF01C72C9DD00392C5B /* FilterViewController.m in Sources */,
+				E186DBF61C72CA0700392C5B /* FrameViewController.m in Sources */,
 				E186DBEA1C71B0FC00392C5B /* EditImageViewController.m in Sources */,
 				E186D98C1C71711C00392C5B /* main.m in Sources */,
 			);
