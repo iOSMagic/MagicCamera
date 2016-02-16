@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+/*
+    增强
+    滤镜
+    马赛克
+    边框
+ */
 @interface ViewController : UIViewController
 
 
