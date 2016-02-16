@@ -10,4 +10,7 @@
 
 @interface EditImageViewController : UIViewController
 @property (nonatomic,strong) UIImage *originalImage;
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (nonatomic,strong) UIImageView *imageView;
+
 @end

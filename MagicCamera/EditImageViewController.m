@@ -10,8 +10,6 @@
 
 @interface EditImageViewController () <UIScrollViewDelegate>
 
-@property (strong, nonatomic) UIScrollView *scrollView;
-@property (nonatomic,strong) UIImageView *imageView;
 
 @end
 
@@ -25,6 +23,7 @@
     self.imageView = [[UIImageView alloc] initWithFrame:_scrollView.bounds];
     [_scrollView addSubview:_imageView];
     _scrollView.delegate = self;
+    _scrollView.maximumZoomScale = 4;
     _scrollView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = _originalImage;
     _scrollView.contentSize = _scrollView.bounds.size;
@@ -51,7 +50,7 @@
 #pragma mark - UIScrollViewDelegate
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
-    return _imageView;
+    return self.imageView;
 }
 
 /*
