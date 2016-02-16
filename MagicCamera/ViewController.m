@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "EditImageViewController.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -37,6 +38,10 @@
     return @[@"增强",@"滤镜",@"马赛克",@"边框"];
 }
 
+-(NSArray<NSString*>*)avalibleSegues
+{
+    return @[@"enhance",@"filter",@"mosaic",@"frame"];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(nullable id)sender
 {
@@ -53,7 +58,9 @@
     
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-        [self performSegueWithIdentifier:@"edit" sender:image];
+        NSArray *avalibleSegues = [self avalibleSegues];
+        NSString *segue = avalibleSegues[_tableView.indexPathForSelectedRow.row];
+        [self performSegueWithIdentifier:segue sender:image];
     }];
 
 }

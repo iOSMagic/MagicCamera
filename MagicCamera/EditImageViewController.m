@@ -10,7 +10,7 @@
 
 @interface EditImageViewController () <UIScrollViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UIScrollView *scrollView;
 @property (nonatomic,strong) UIImageView *imageView;
 
 @end
@@ -20,19 +20,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    
-
-}
--(void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_scrollView];
     self.imageView = [[UIImageView alloc] initWithFrame:_scrollView.bounds];
     [_scrollView addSubview:_imageView];
     _scrollView.delegate = self;
     _scrollView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = _originalImage;
     _scrollView.contentSize = _scrollView.bounds.size;
+
+}
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
 }
 
 - (void)didReceiveMemoryWarning {

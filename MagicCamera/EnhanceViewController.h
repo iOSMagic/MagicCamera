@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EditImageViewController.h"
 //增强
-@interface EnhanceViewController : UIViewController
+@interface EnhanceViewController : EditImageViewController
 
 @end

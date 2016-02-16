@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface MosaicViewController : UIViewController
+#import "EditImageViewController.h"
+@interface MosaicViewController : EditImageViewController
 
 @end

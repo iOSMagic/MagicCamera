@@ -46,7 +46,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="0tm-Wf-lVR"/>
                     <connections>
-                        <segue destination="vS1-Ty-Rlb" kind="show" identifier="edit" id="U2W-12-wBe"/>
+                        <outlet property="tableView" destination="iz2-lp-LEa" id="dzp-OI-eKN"/>
+                        <segue destination="vS1-Ty-Rlb" kind="show" identifier="enhance" id="U2W-12-wBe"/>
+                        <segue destination="xR6-Go-QA1" kind="show" identifier="filter" id="JkU-gr-RP7"/>
+                        <segue destination="Lh7-0V-6Pu" kind="show" identifier="mosaic" id="fTS-pd-w6G"/>
+                        <segue destination="9D5-Nm-77u" kind="show" identifier="frame" id="Ipq-V9-jYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="-499" y="395"/>
         </scene>
-        <!--Edit Image View Controller-->
+        <!--Enhance View Controller-->
         <scene sceneID="pUO-ep-m7m">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vS1-Ty-Rlb" customClass="EditImageViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="vS1-Ty-Rlb" customClass="EnhanceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qI3-hN-jQb"/>
                         <viewControllerLayoutGuide type="bottom" id="cVh-aM-Gzr"/>
@@ -80,26 +84,66 @@
                     <view key="view" contentMode="scaleToFill" id="SDR-hb-g54">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="WkM-d5-xro">
-                                <rect key="frame" x="0.0" y="84" width="600" height="436"/>
-                            </scrollView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="WkM-d5-xro" firstAttribute="top" secondItem="qI3-hN-jQb" secondAttribute="bottom" constant="20" id="LTS-QS-rbz"/>
-                            <constraint firstItem="cVh-aM-Gzr" firstAttribute="top" secondItem="WkM-d5-xro" secondAttribute="bottom" constant="80" id="Swr-Vi-YjL"/>
-                            <constraint firstAttribute="trailing" secondItem="WkM-d5-xro" secondAttribute="trailing" id="UAm-M6-gcc"/>
-                            <constraint firstItem="WkM-d5-xro" firstAttribute="leading" secondItem="SDR-hb-g54" secondAttribute="leading" id="mLo-Uz-JVz"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="scrollView" destination="WkM-d5-xro" id="P3o-Xx-vJd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7m-HY-uG1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1136" y="395"/>
+            <point key="canvasLocation" x="1288" y="-5"/>
+        </scene>
+        <!--Mosaic View Controller-->
+        <scene sceneID="e1Z-Sv-SDs">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Lh7-0V-6Pu" customClass="MosaicViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HLc-Lo-CU8"/>
+                        <viewControllerLayoutGuide type="bottom" id="lPR-XK-AIR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AOz-DT-JKL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dfG-s1-OjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1280" y="1459"/>
+        </scene>
+        <!--Filter View Controller-->
+        <scene sceneID="sRO-Bk-XU6">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="xR6-Go-QA1" customClass="FilterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2bY-2i-Y5E"/>
+                        <viewControllerLayoutGuide type="bottom" id="ucy-0N-pGX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ngb-UU-HDN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tza-hQ-09F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1268" y="651"/>
+        </scene>
+        <!--Frame View Controller-->
+        <scene sceneID="elf-H0-3Ch">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9D5-Nm-77u" customClass="FrameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6uj-fq-1a9"/>
+                        <viewControllerLayoutGuide type="bottom" id="X7g-To-GcN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rxI-P9-dDy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vop-Fy-8to" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1032" y="2423"/>
         </scene>
     </scenes>
 </document>

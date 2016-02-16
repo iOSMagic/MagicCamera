@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FrameViewController : UIViewController
+#import "EditImageViewController.h"
+@interface FrameViewController : EditImageViewController
 
 @end

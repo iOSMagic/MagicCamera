@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FilterViewController : UIViewController
+#import "EditImageViewController.h"
+@interface FilterViewController : EditImageViewController
 
 @end
