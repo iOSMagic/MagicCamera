@@ -24,7 +24,7 @@
     [_scrollView addSubview:_imageView];
     _scrollView.delegate = self;
     _scrollView.maximumZoomScale = 4;
-    _scrollView.contentMode = UIViewContentModeScaleAspectFit;
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = _originalImage;
     _scrollView.contentSize = _scrollView.bounds.size;
 

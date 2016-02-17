@@ -43,6 +43,13 @@
     [self addGestures];
 }
 
+
+//充值containerView的frame,因为根据图片不同,在的位置也不同
+-(void)refreshContrinerViewFrame
+{
+    
+}
+
 -(void)addGestures
 {
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(reciveGesture:)];
