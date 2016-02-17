@@ -29,14 +29,13 @@
     _autoSelectPhoto = YES;
 }
 
--(void)rightNavigationItemPressed:(UIBarButtonItem*)sender
+
+
+-(void)viewDidAppear:(BOOL)animated
 {
-    _autoSelectPhoto = !_autoSelectPhoto;
-    NSString *title = @"手动选图";
-    if (_autoSelectPhoto) {
-        title = @"自动选图";
-    }
-    [sender setTitle:title];
+    [super viewDidAppear:animated];
+    
+    [_tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +49,16 @@
     picker.delegate = self;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     [self presentViewController:picker animated:YES completion:nil];
+}
+
+-(void)rightNavigationItemPressed:(UIBarButtonItem*)sender
+{
+    _autoSelectPhoto = !_autoSelectPhoto;
+    NSString *title = @"手动选图";
+    if (_autoSelectPhoto) {
+        title = @"自动选图";
+    }
+    [sender setTitle:title];
 }
 
 -(NSArray<NSString*>*)avalibleEffect
