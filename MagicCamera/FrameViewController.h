@@ -19,6 +19,10 @@
 @property (nonatomic,strong) UIView *containerView;
 //前景视图
 @property (nonatomic,strong) UIView *foreView;
-//各种选项
-@property (nonatomic,strong) UIView *collectionView;
+
+//风格
+@property (weak, nonatomic) IBOutlet UICollectionView *styleCollectionView;
+
+//类型
+@property (weak, nonatomic) IBOutlet UICollectionView *typeCollectionView;
 @end
