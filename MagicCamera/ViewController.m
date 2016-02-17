@@ -10,6 +10,11 @@
 #import "EditImageViewController.h"
 #import "FrameViewController.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+{
+    
+    //自动选图,默认是YES
+    BOOL _autoSelectPhoto;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
@@ -19,6 +24,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"自动选图" style:UIBarButtonItemStylePlain target:self action:@selector(rightNavigationItemPressed:)];
+    _autoSelectPhoto = YES;
+}
+
+-(void)rightNavigationItemPressed:(UIBarButtonItem*)sender
+{
+    _autoSelectPhoto = !_autoSelectPhoto;
+    NSString *title = @"手动选图";
+    if (_autoSelectPhoto) {
+        title = @"自动选图";
+    }
+    [sender setTitle:title];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,11 +109,16 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    [self pickPhoto];
-    NSArray *avalibleSegues = [self avalibleSegues];
-    NSString *segue = avalibleSegues[indexPath.row];
-    UIImage *image = [UIImage imageNamed:@"Image"];
-    [self performSegueWithIdentifier:segue sender:image];
+    if (_autoSelectPhoto) {
+        NSArray *avalibleSegues = [self avalibleSegues];
+        NSString *segue = avalibleSegues[indexPath.row];
+        UIImage *image = [UIImage imageNamed:@"Image"];
+        [self performSegueWithIdentifier:segue sender:image];
+    }else{
+        [self pickPhoto];
+    }
+
+    
 }
 
 
