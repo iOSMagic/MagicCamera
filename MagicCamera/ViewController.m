@@ -91,7 +91,11 @@
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self pickPhoto];
+//    [self pickPhoto];
+    NSArray *avalibleSegues = [self avalibleSegues];
+    NSString *segue = avalibleSegues[indexPath.row];
+    UIImage *image = [UIImage imageNamed:@"Image"];
+    [self performSegueWithIdentifier:segue sender:image];
 }
 
 

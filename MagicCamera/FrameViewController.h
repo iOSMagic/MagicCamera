@@ -10,7 +10,12 @@
 //边框界面
 @interface FrameViewController : UIViewController
 @property (nonatomic,strong) UIImage *originalImage;
+
+//编辑的图片
 @property (nonatomic,strong) UIImageView *imageView;
+
+//相框的图片
+@property (nonatomic,strong) UIImageView *frameImageView;
 
 //背景视图
 @property (nonatomic,strong) UIView *backView;
