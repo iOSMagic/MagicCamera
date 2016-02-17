@@ -18,11 +18,11 @@
 @property (nonatomic,strong) UIImageView *frameImageView;
 
 //背景视图
-@property (nonatomic,strong) UIView *backView;
+@property (nonatomic,strong) UIImageView *backView;
 //包含图片的view
 @property (nonatomic,strong) UIView *containerView;
 //前景视图
-@property (nonatomic,strong) UIView *foreView;
+@property (nonatomic,strong) UIImageView *foreView;
 
 //风格
 @property (weak, nonatomic) IBOutlet UICollectionView *styleCollectionView;

@@ -29,18 +29,48 @@
 -(void)configViews
 {
     CGRect bounds = self.view.bounds;
+    CGRect frame = CGRectMake(0, 64, CGRectGetWidth(bounds), CGRectGetHeight(bounds)-200);
+//    self.backView = [[UIImageView alloc] initWithFrame:frame];
+//    _backView.contentMode = UIViewContentModeCenter;
+//    _backView.image = [UIImage imageNamed:@"meituframe1"];
+//    [self.view addSubview:_backView];
+    
+    
     self.containerView = [[UIView alloc] initWithFrame:CGRectZero];
-    _containerView.frame = CGRectMake(0, 64, CGRectGetWidth(bounds), CGRectGetHeight(bounds)-200);
+    _containerView.frame = frame;
     _containerView.clipsToBounds = YES;
+    _containerView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_containerView];
+    
+    
+    
     self.imageView = [[UIImageView alloc] initWithFrame:_containerView.bounds];
     [_containerView addSubview:_imageView];
     
-//    _imageView.frame = CGRectMake(0, 64, CGRectGetWidth(bounds), CGRectGetHeight(bounds)-200);
+
     _imageView.image = _originalImage;
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     
+    
+    self.foreView = [[UIImageView alloc] initWithFrame:frame];
+    _foreView.image = [UIImage imageNamed:@"meituframe1"];
+//    _foreView.contentMode = UIViewContentModeScaleAspectFit;
+    _foreView.clipsToBounds = YES;
+    [self.view addSubview:_foreView];
+    _foreView.userInteractionEnabled = NO;
+    
+    
+    
+    
+    
+    
     [self addGestures];
+    
+    
+    
+    
+    
+    
 }
 
 
