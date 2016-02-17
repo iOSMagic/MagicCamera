@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A0F44A11C7450AA00EED874 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0F44A01C7450AA00EED874 /* Masonry.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5A0F44A51C74516200EED874 /* PPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */; };
+		5A0F44A61C74516200EED874 /* PPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */; };
 		E186D98C1C71711C00392C5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E186D98B1C71711C00392C5B /* main.m */; };
 		E186D98F1C71711C00392C5B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E186D98E1C71711C00392C5B /* AppDelegate.m */; };
 		E186D9921C71711C00392C5B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186D9911C71711C00392C5B /* ViewController.m */; };
@@ -23,6 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A0F44A01C7450AA00EED874 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Masonry.framework; sourceTree = "<group>"; };
+		5A0F44A21C74516200EED874 /* PPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectionViewCell.h; sourceTree = "<group>"; };
+		5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectionViewCell.m; sourceTree = "<group>"; };
+		5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCollectionViewCell.xib; sourceTree = "<group>"; };
 		E186D9871C71711C00392C5B /* MagicCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E186D98B1C71711C00392C5B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E186D98D1C71711C00392C5B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0F44A11C7450AA00EED874 /* Masonry.framework in Frameworks */,
 				E186DBE71C71AC9D00392C5B /* GPUImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +105,7 @@
 		E186D9A71C71AADD00392C5B /* Venders */ = {
 			isa = PBXGroup;
 			children = (
+				5A0F44A01C7450AA00EED874 /* Masonry.framework */,
 				E186DBE61C71AC9D00392C5B /* GPUImage.framework */,
 			);
 			name = Venders;
@@ -113,6 +122,9 @@
 				E186DBE91C71B0FC00392C5B /* EditImageViewController.m */,
 				E186DBEB1C72C9AE00392C5B /* EnhanceViewController.h */,
 				E186DBEC1C72C9AE00392C5B /* EnhanceViewController.m */,
+				5A0F44A21C74516200EED874 /* PPCollectionViewCell.h */,
+				5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */,
+				5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */,
 				E186DBEE1C72C9DD00392C5B /* FilterViewController.h */,
 				E186DBEF1C72C9DD00392C5B /* FilterViewController.m */,
 				E186DBF11C72C9F400392C5B /* MosaicViewController.h */,
@@ -200,6 +212,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A0F44A61C74516200EED874 /* PPCollectionViewCell.xib in Resources */,
 				E186D99D1C71711C00392C5B /* LaunchScreen.storyboard in Resources */,
 				E186D99A1C71711C00392C5B /* Assets.xcassets in Resources */,
 				E186D9951C71711C00392C5B /* Main.storyboard in Resources */,
@@ -215,6 +228,7 @@
 			files = (
 				E186D9921C71711C00392C5B /* ViewController.m in Sources */,
 				E186DBED1C72C9AE00392C5B /* EnhanceViewController.m in Sources */,
+				5A0F44A51C74516200EED874 /* PPCollectionViewCell.m in Sources */,
 				E186D98F1C71711C00392C5B /* AppDelegate.m in Sources */,
 				E186D9981C71711C00392C5B /* MagicCamera.xcdatamodeld in Sources */,
 				E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */,
@@ -339,6 +353,10 @@
 				);
 				INFOPLIST_FILE = MagicCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/MagicCamera/Masonry.framework/Masonry\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MagicCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -354,6 +372,10 @@
 				);
 				INFOPLIST_FILE = MagicCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"\"$(SRCROOT)/MagicCamera/Masonry.framework/Masonry\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MagicCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
