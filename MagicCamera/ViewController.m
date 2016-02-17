@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "EditImageViewController.h"
+#import "FrameViewController.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -48,6 +49,10 @@
     UIViewController *vc = segue.destinationViewController;
     if ([vc isKindOfClass:[EditImageViewController class]]) {
         EditImageViewController *temp = (EditImageViewController*)vc;
+        temp.originalImage = sender;
+    }
+    if ([vc isKindOfClass:[FrameViewController class]]) {
+        FrameViewController *temp = (FrameViewController*)vc;
         temp.originalImage = sender;
     }
 }
