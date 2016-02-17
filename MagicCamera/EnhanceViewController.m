@@ -17,13 +17,13 @@
 #import "EnhanceViewController.h"
 #import "PPCollectionViewCell.h"
 #import <Masonry/Masonry.h>
-
+#import <GPUImage/GPUImage.h>
 static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 
 @interface EnhanceViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
     UICollectionView   *_listCollectionView;
-
+    UISlider *slider *_controllerSlider;
 }
 @end
 
@@ -56,6 +56,8 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
         make.height.equalTo(@(CELL_WIDTH));
         
     }];
+    
+
     // Do any additional setup after loading the view.
 }
 
@@ -92,7 +94,7 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     return 0;
 }
 
- 
+
 
 #pragma mark - UICollectionViewdatasource
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
