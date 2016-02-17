@@ -8,7 +8,7 @@
 
 #import "FrameViewController.h"
 
-@interface FrameViewController ()
+@interface FrameViewController () <UIGestureRecognizerDelegate>
 {
     
 }
@@ -33,6 +33,10 @@
     
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(reciveGesture:)];
     [self.view addGestureRecognizer:pinch];
+    
+    UIRotationGestureRecognizer *rotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(reciveGesture:)];
+    rotate.delegate = self;
+    [self.view addGestureRecognizer:rotate];
 }
 
 -(void)reciveGesture:(UIGestureRecognizer*)recognizer
@@ -47,7 +51,14 @@
     
     if (theclass == [UIPinchGestureRecognizer class]) {
         UIPinchGestureRecognizer *pinch = (UIPinchGestureRecognizer*)recognizer;
-        
+        _imageView.transform = CGAffineTransformScale(_imageView.transform, pinch.scale, pinch.scale);
+        pinch.scale = 1;
+    }
+    
+    if (theclass == [UIRotationGestureRecognizer class]) {
+        UIRotationGestureRecognizer *rotate = (UIRotationGestureRecognizer*)recognizer;
+        _imageView.transform = CGAffineTransformRotate(_imageView.transform, rotate.rotation);
+        rotate.rotation = 0;
     }
 }
 
@@ -55,6 +66,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 /*
 #pragma mark - Navigation
@@ -65,5 +78,9 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+#pragma mark - UIGestureRecognizerDelegate
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
 @end
