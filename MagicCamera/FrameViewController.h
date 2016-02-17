@@ -10,7 +10,6 @@
 //边框界面
 @interface FrameViewController : UIViewController
 @property (nonatomic,strong) UIImage *originalImage;
-@property (strong, nonatomic) UIScrollView *scrollView;
 @property (nonatomic,strong) UIImageView *imageView;
 
 //背景视图
