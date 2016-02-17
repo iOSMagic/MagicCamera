@@ -38,7 +38,7 @@
     
 //    _imageView.frame = CGRectMake(0, 64, CGRectGetWidth(bounds), CGRectGetHeight(bounds)-200);
     _imageView.image = _originalImage;
-    
+    _imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     [self addGestures];
 }
