@@ -19,24 +19,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:_imageView];
+    
+    
+    
+    
+    [self configViews];
+}
+
+-(void)configViews
+{
     CGRect bounds = self.view.bounds;
-    _imageView.frame = CGRectMake(0, 64, CGRectGetWidth(bounds), CGRectGetHeight(bounds)-200);
+    self.containerView = [[UIView alloc] initWithFrame:CGRectZero];
+    _containerView.frame = CGRectMake(0, 64, CGRectGetWidth(bounds), CGRectGetHeight(bounds)-200);
+    _containerView.clipsToBounds = YES;
+    [self.view addSubview:_containerView];
+    self.imageView = [[UIImageView alloc] initWithFrame:_containerView.bounds];
+    [_containerView addSubview:_imageView];
+    
+//    _imageView.frame = CGRectMake(0, 64, CGRectGetWidth(bounds), CGRectGetHeight(bounds)-200);
     _imageView.image = _originalImage;
     
     
+    [self addGestures];
+}
+
+-(void)addGestures
+{
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(reciveGesture:)];
-    [self.view addGestureRecognizer:pan];
-//    _imageView.userInteractionEnabled = YES;
+    [_containerView addGestureRecognizer:pan];
+
     
     
     UIPinchGestureRecognizer *pinch = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(reciveGesture:)];
-    [self.view addGestureRecognizer:pinch];
+    [_containerView addGestureRecognizer:pinch];
     
     UIRotationGestureRecognizer *rotate = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(reciveGesture:)];
     rotate.delegate = self;
-    [self.view addGestureRecognizer:rotate];
+    [_containerView addGestureRecognizer:rotate];
 }
 
 -(void)reciveGesture:(UIGestureRecognizer*)recognizer
