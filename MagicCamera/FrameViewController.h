@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EditImageViewController.h"
-@interface FrameViewController : EditImageViewController
-
+//边框
+@interface FrameViewController : UIViewController
+@property (nonatomic,strong) UIImage *originalImage;
+@property (strong, nonatomic) UIScrollView *scrollView;
+@property (nonatomic,strong) UIImageView *imageView;
 @end
