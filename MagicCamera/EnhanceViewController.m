@@ -23,7 +23,8 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 @interface EnhanceViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
     UICollectionView   *_listCollectionView;
-    UISlider *slider *_controllerSlider;
+    UISlider  *_controllerSlider;
+    GPUImageRGBFilter *_stillImageFilter;
 }
 @end
 
@@ -57,15 +58,31 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
         
     }];
     
-
+    _controllerSlider = [[UISlider alloc] init];
+    _controllerSlider.value = 0.6;
+    [_controllerSlider addTarget:self action:@selector(updateFilterFromSlider:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_controllerSlider];
+    [_controllerSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_listCollectionView.mas_top);
+        make.centerX.equalTo(weakSelf.view);
+        make.width.equalTo(weakSelf.view);
+        make.height.equalTo(@44);
+        
+    }];
+    
+    _stillImageFilter = [[GPUImageRGBFilter alloc] init];
+    [_stillImageFilter setRed:_controllerSlider.value];
+    UIImage *quickFilteredImage = [_stillImageFilter imageByFilteringImage:self.originalImage];
+    self.imageView.image = quickFilteredImage;
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)updateFilterFromSlider:(id)sender
+{
+    [_stillImageFilter setRed:_controllerSlider.value];
+    UIImage *quickFilteredImage = [_stillImageFilter imageByFilteringImage:self.originalImage];
+    self.imageView.image = quickFilteredImage;
 }
-
 #pragma mark - UIScrollViewDelegate
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
