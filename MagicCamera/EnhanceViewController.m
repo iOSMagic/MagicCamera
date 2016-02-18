@@ -97,7 +97,70 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     dic = @{@"classname":@"GPUImageMonochromeFilter",@"selector":@"setIntensity:",@"showname":@"单色"};
     [_fileterArray addObject:dic];
     
-    dic = @{@"classname":@"GPUImageMonochromeFilter",@"selector":@"setIntensity:",@"showname":@"单色"};
+    dic = @{@"classname":@"GPUImageRGBFilter",@"selector":@"setGreen:",@"showname":@"RGB绿色"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageRGBFilter",@"selector":@"setBlue:",@"showname":@"RGB蓝色"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageRGBFilter",@"selector":@"setRed:",@"showname":@"RGB红色"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageHueFilter",@"selector":@"setHue:",@"showname":@"色度"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageSharpenFilter",@"selector":@"setSharpness:",@"showname":@"锐化"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageGammaFilter",@"selector":@"setGamma:",@"showname":@"伽马线"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImagePosterizeFilter",@"selector":@"setColorLevels:",@"showname":@"色调分离 噪点效果"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageLuminanceThresholdFilter",@"selector":@"setThreshold:",@"showname":@"亮度阈"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageSwirlFilter",@"selector":@"setAngle:",@"showname":@"漩涡，中间形成卷曲的画面"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageEmbossFilter",@"selector":@"setIntensity:",@"showname":@"浮雕效果，带有点3d的感觉"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageSmoothToonFilter",@"selector":@"setBlurSize:",@"showname":@"粗旷的画风"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageBulgeDistortionFilter",@"selector":@"setScale:",@"showname":@"凸起失真，鱼眼效果"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageSphereRefractionFilter",@"selector":@"setRadius:",@"showname":@"球形折射，图形倒立"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageGlassSphereFilter",@"selector":@"setRadius:",@"showname":@"水晶球效果"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageToneCurveFilter",@"selector":@"setBlueControlPoints:",@"showname":@"色调曲线"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImagePinchDistortionFilter",@"selector":@"setScale:",@"showname":@"收缩失真，凹面镜"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageMosaicFilter",@"selector":@"setDisplayTileSize:",@"showname":@"黑白马赛克"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageVignetteFilter",@"selector":@"setVignetteEnd:",@"showname":@"晕影，形成黑色圆形边缘，突出中间图像的效果"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageGaussianBlurFilter",@"selector":@"setBlurSize:",@"showname":@"高斯模糊"};
+    [_fileterArray addObject:dic];
+
+    dic = @{@"classname":@"GPUImageBilateralFilter",@"selector":@"setBlurSize:",@"showname":@"双边模糊"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageFastBlurFilter",@"selector":@"setBlurPasses:",@"showname":@"模糊"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageOpacityFilter",@"selector":@"setOpacity:",@"showname":@"不透明度"};
     [_fileterArray addObject:dic];
 }
 
@@ -109,11 +172,16 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     SEL selector = NSSelectorFromString(dic[@"selector"]);
     if ([_stillImageFilter respondsToSelector:selector]) {
 //        [_stillImageFilter performSelector:selector withObject:_controllerSlider.value];
+//<<<<<<< HEAD
         
         void (*objc_msgSendTyped)(id self, SEL _cmd, float arg1) = (void*)objc_msgSend;
         objc_msgSendTyped(_stillImageFilter, selector,_controllerSlider.value);
         
 //        objc_msgSend(_stillImageFilter,selector,_controllerSlider.value,...);
+//=======
+//        NSLog(@"效果进行更改");
+//        objc_msgSend(_stillImageFilter,selector,_controllerSlider.value);
+//>>>>>>> origin/master
     }
     
 //    [_stillImageFilter setRed:_controllerSlider.value];
