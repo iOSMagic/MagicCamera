@@ -118,6 +118,13 @@
     }
 }
 
+
+
+-(NSArray<NSString*>*)titlesForTypeCollectionView
+{
+    return @[@"关闭",@"海报边框",@"简单边框",@"炫彩边框",@"完成"];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -161,13 +168,35 @@
     if ([collectionView isEqual:_typeCollectionView]) {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
         UILabel *label = [cell viewWithTag:1];
-        label.text = @"button";
+        label.text = [self titlesForTypeCollectionView][indexPath.item];
     }
     
     return cell;
 }
 #pragma mark - UICollectionViewDelegate
-
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([collectionView isEqual:_typeCollectionView]) {
+        switch (indexPath.item) {
+            case 0:
+            {
+                //关闭
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+                break;
+            case 4:
+            {
+                //进入
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
+    }
+}
 
 
 
