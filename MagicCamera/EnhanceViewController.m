@@ -15,12 +15,13 @@
 #define MB_WeakSelfDefine(obj) __weak typeof(self) weakSelf = obj
 
 
-//#import <objc/message.h>
-#import <GPUImage/GPUImageSaturationFilter.h>
+#import <objc/message.h>
+
+#import "GPUImage.h"
 #import "EnhanceViewController.h"
 #import "PPCollectionViewCell.h"
 #import <Masonry/Masonry.h>
-#import <GPUImage/GPUImage.h>
+//#import <GPUImage/GPUImage.h>
 #include <objc/runtime.h>
 static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 
@@ -65,7 +66,10 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     }];
     
     _controllerSlider = [[UISlider alloc] init];
+    _controllerSlider.minimumValue = 0;
+    _controllerSlider.maximumValue = 1.0;
     _controllerSlider.value = 0.6;
+
     [_controllerSlider addTarget:self action:@selector(updateFilterFromSlider:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_controllerSlider];
     [_controllerSlider mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -178,9 +182,13 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
         }
         else
         {
-//            void (*objc_msgSendTyped)(id self, SEL _cmd, float arg1) = (void*)objc_msgSend;
-//            objc_msgSendTyped(_stillImageFilter, selector,_controllerSlider.value);
-            objc_msgSend(_stillImageFilter, selector,_controllerSlider.value);
+            void (*objc_msgSendTyped)(id self, SEL _cmd, CGFloat arg1) = (void*)objc_msgSend;
+            
+            CGFloat value = _controllerSlider.value;
+//            NSLog(@"%f",value);
+            objc_msgSendTyped(_stillImageFilter, selector,value);
+//            objc_msgSend(_stillImageFilter, selector,_controllerSlider.value);
+//            objc_msgSend(<#id#>, <#SEL, ...#>)
         }
     }
     

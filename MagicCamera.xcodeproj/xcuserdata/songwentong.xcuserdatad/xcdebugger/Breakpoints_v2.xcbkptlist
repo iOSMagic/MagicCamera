@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MagicCamera/EditImageViewController.m"
-            timestampString = "477287129.896163"
+            filePath = "MagicCamera/EnhanceViewController.m"
+            timestampString = "477480982.973774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "-viewForZoomingInScrollView:"
+            startingLineNumber = "189"
+            endingLineNumber = "189"
+            landmarkName = "-updateFilterFromSlider:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,28 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MagicCamera/EnhanceViewController.m"
-            timestampString = "477287020.465046"
+            filePath = "MagicCamera/Venders/GPUImage/GPUImageSaturationFilter.m"
+            timestampString = "477480903.080979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "@interface EnhanceViewController()"
-            landmarkType = "2">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MagicCamera/EnhanceViewController.m"
-            timestampString = "477287026.24672"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18">
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-setSaturation:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
