@@ -15,7 +15,7 @@
 #define MB_WeakSelfDefine(obj) __weak typeof(self) weakSelf = obj
 
 
-#import <objc/message.h>
+//#import <objc/message.h>
 #import <GPUImage/GPUImageSaturationFilter.h>
 #import "EnhanceViewController.h"
 #import "PPCollectionViewCell.h"
@@ -171,17 +171,17 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     _stillImageFilter = [[classname alloc] init];
     SEL selector = NSSelectorFromString(dic[@"selector"]);
     if ([_stillImageFilter respondsToSelector:selector]) {
-//        [_stillImageFilter performSelector:selector withObject:_controllerSlider.value];
-//<<<<<<< HEAD
-        
-        void (*objc_msgSendTyped)(id self, SEL _cmd, float arg1) = (void*)objc_msgSend;
-        objc_msgSendTyped(_stillImageFilter, selector,_controllerSlider.value);
-        
-//        objc_msgSend(_stillImageFilter,selector,_controllerSlider.value,...);
-//=======
-//        NSLog(@"效果进行更改");
-//        objc_msgSend(_stillImageFilter,selector,_controllerSlider.value);
-//>>>>>>> origin/master
+
+        if (_stillImageFilter && [_stillImageFilter isKindOfClass:[GPUImageToneCurveFilter class]])
+        {
+        [(GPUImageToneCurveFilter *)_stillImageFilter setBlueControlPoints:[NSArray arrayWithObjects:[NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)], [NSValue valueWithCGPoint:CGPointMake(0.5, 0.5)], [NSValue valueWithCGPoint:CGPointMake(1.0, 0.75)], nil]];
+        }
+        else
+        {
+//            void (*objc_msgSendTyped)(id self, SEL _cmd, float arg1) = (void*)objc_msgSend;
+//            objc_msgSendTyped(_stillImageFilter, selector,_controllerSlider.value);
+            objc_msgSend(_stillImageFilter, selector,_controllerSlider.value);
+        }
     }
     
 //    [_stillImageFilter setRed:_controllerSlider.value];
