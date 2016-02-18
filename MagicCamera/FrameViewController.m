@@ -8,7 +8,7 @@
 
 #import "FrameViewController.h"
 
-@interface FrameViewController () <UIGestureRecognizerDelegate>
+@interface FrameViewController () <UIGestureRecognizerDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     
 }
@@ -61,8 +61,8 @@
     
     
     
-    
-    
+    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)_typeCollectionView.collectionViewLayout;
+    collectionViewLayout.itemSize = CGSizeMake(CGRectGetWidth(bounds)/5, collectionViewLayout.itemSize.height);
     
     [self addGestures];
     
@@ -74,7 +74,7 @@
 }
 
 
-//充值containerView的frame,因为根据图片不同,在的位置也不同
+//重置containerView的frame,因为根据图片不同,在的位置也不同
 -(void)refreshContrinerViewFrame
 {
     
@@ -139,4 +139,38 @@
 {
     return YES;
 }
+
+#pragma mark - UICollectionViewDataSource
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    NSInteger number = 0;
+    if ([collectionView isEqual:_typeCollectionView]) {
+        number = 5;
+    }
+    
+    
+    
+    
+    return number;
+}
+
+// The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell = nil;
+    if ([collectionView isEqual:_typeCollectionView]) {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+        UILabel *label = [cell viewWithTag:1];
+        label.text = @"button";
+    }
+    
+    return cell;
+}
+#pragma mark - UICollectionViewDelegate
+
+
+
+
+
+#pragma mark - other
 @end
