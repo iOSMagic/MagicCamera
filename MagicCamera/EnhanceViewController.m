@@ -14,17 +14,23 @@
 #define FOOTVIEW_HEIGHT     50
 #define MB_WeakSelfDefine(obj) __weak typeof(self) weakSelf = obj
 
+
+
+#import <GPUImage/GPUImageSaturationFilter.h>
 #import "EnhanceViewController.h"
 #import "PPCollectionViewCell.h"
 #import <Masonry/Masonry.h>
 #import <GPUImage/GPUImage.h>
+#include <objc/runtime.h>
 static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 
 @interface EnhanceViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
     UICollectionView   *_listCollectionView;
     UISlider  *_controllerSlider;
-    GPUImageRGBFilter *_stillImageFilter;
+    GPUImageFilter *_stillImageFilter;
+    NSMutableArray *_fileterArray;
+    NSInteger _selectRow;
 }
 @end
 
@@ -65,24 +71,53 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     [_controllerSlider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(_listCollectionView.mas_top);
         make.centerX.equalTo(weakSelf.view);
-        make.width.equalTo(weakSelf.view);
+        make.width.equalTo(weakSelf.view).offset(-60);
         make.height.equalTo(@44);
         
     }];
     
-    _stillImageFilter = [[GPUImageRGBFilter alloc] init];
-    [_stillImageFilter setRed:_controllerSlider.value];
-    UIImage *quickFilteredImage = [_stillImageFilter imageByFilteringImage:self.originalImage];
-    self.imageView.image = quickFilteredImage;
+    [self addFilterArray];
+ 
+    
     // Do any additional setup after loading the view.
+}
+
+-(void)addFilterArray
+{
+    _fileterArray = [NSMutableArray array];
+    NSDictionary *dic = @{@"classname":@"GPUImageSaturationFilter",@"selector":@"setSaturation:",@"showname":@"饱和度"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageContrastFilter",@"selector":@"setContrast:",@"showname":@"对比度"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageExposureFilter",@"selector":@"setExposure:",@"showname":@"曝光"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageMonochromeFilter",@"selector":@"setIntensity:",@"showname":@"单色"};
+    [_fileterArray addObject:dic];
+    
+    dic = @{@"classname":@"GPUImageMonochromeFilter",@"selector":@"setIntensity:",@"showname":@"单色"};
+    [_fileterArray addObject:dic];
 }
 
 - (void)updateFilterFromSlider:(id)sender
 {
-    [_stillImageFilter setRed:_controllerSlider.value];
+    NSDictionary *dic = _fileterArray[_selectRow];
+    Class classname = NSClassFromString(dic[@"classname"]);
+    _stillImageFilter = [[classname alloc] init];
+    SEL selector = NSSelectorFromString(dic[@"selector"]);
+    if ([_stillImageFilter respondsToSelector:selector]) {
+//        [_stillImageFilter performSelector:selector withObject:_controllerSlider.value];
+        objc_msgSend(_stillImageFilter,selector,_controllerSlider.value);
+    }
+    
+//    [_stillImageFilter setRed:_controllerSlider.value];
     UIImage *quickFilteredImage = [_stillImageFilter imageByFilteringImage:self.originalImage];
     self.imageView.image = quickFilteredImage;
 }
+
+
 #pragma mark - UIScrollViewDelegate
 - (nullable UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
@@ -121,7 +156,7 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return _fileterArray.count;
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
@@ -129,11 +164,14 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 {
     PPCollectionViewCell *cell = (PPCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:PhotoInfoReuseIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor greenColor];
-        cell.nameLabel.text = [NSString stringWithFormat:@"%ld",indexPath.row];
+    NSDictionary *dic = _fileterArray[indexPath.row];
+    cell.nameLabel.text = dic[@"showname"];
     return cell;
 }
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    _selectRow = indexPath.row;
+    [self updateFilterFromSlider:_controllerSlider];
 }
 @end

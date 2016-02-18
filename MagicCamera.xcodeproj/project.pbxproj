@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5A0F44A11C7450AA00EED874 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0F44A01C7450AA00EED874 /* Masonry.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5A0F44A11C7450AA00EED874 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0F44A01C7450AA00EED874 /* Masonry.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5A0F44A51C74516200EED874 /* PPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */; };
 		5A0F44A61C74516200EED874 /* PPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */; };
 		E186D98C1C71711C00392C5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E186D98B1C71711C00392C5B /* main.m */; };
@@ -356,6 +356,8 @@
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"\"$(SRCROOT)/MagicCamera/Masonry.framework/Masonry\"",
+					"-all_load",
+					"\"$(SRCROOT)/MagicCamera/GPUImage.framework/GPUImage\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MagicCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -375,6 +377,8 @@
 				OTHER_LDFLAGS = (
 					"-force_load",
 					"\"$(SRCROOT)/MagicCamera/Masonry.framework/Masonry\"",
+					"-all_load",
+					"\"$(SRCROOT)/MagicCamera/GPUImage.framework/GPUImage\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mike.MagicCamera;
 				PRODUCT_NAME = "$(TARGET_NAME)";
