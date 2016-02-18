@@ -176,6 +176,7 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+
     if ([collectionView isEqual:_typeCollectionView]) {
         switch (indexPath.item) {
             case 0:
