@@ -15,7 +15,7 @@
 #define MB_WeakSelfDefine(obj) __weak typeof(self) weakSelf = obj
 
 
-
+#import <objc/message.h>
 #import <GPUImage/GPUImageSaturationFilter.h>
 #import "EnhanceViewController.h"
 #import "PPCollectionViewCell.h"
@@ -109,7 +109,11 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     SEL selector = NSSelectorFromString(dic[@"selector"]);
     if ([_stillImageFilter respondsToSelector:selector]) {
 //        [_stillImageFilter performSelector:selector withObject:_controllerSlider.value];
-        objc_msgSend(_stillImageFilter,selector,_controllerSlider.value);
+        
+        void (*objc_msgSendTyped)(id self, SEL _cmd, float arg1) = (void*)objc_msgSend;
+        objc_msgSendTyped(_stillImageFilter, selector,_controllerSlider.value);
+        
+//        objc_msgSend(_stillImageFilter,selector,_controllerSlider.value,...);
     }
     
 //    [_stillImageFilter setRed:_controllerSlider.value];
