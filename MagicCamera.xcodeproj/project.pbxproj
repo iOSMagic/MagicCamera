@@ -10,13 +10,9 @@
 		5A0F44A11C7450AA00EED874 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0F44A01C7450AA00EED874 /* Masonry.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5A0F44A51C74516200EED874 /* PPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */; };
 		5A0F44A61C74516200EED874 /* PPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */; };
-		96D637A41C803FD8003D8A92 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D6379B1C803FD8003D8A92 /* checked.png */; };
-		96D637A51C803FD8003D8A92 /* sample1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D6379C1C803FD8003D8A92 /* sample1.jpg */; };
 		96D637A61C803FD8003D8A92 /* ShowcaseFilterListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D6379E1C803FD8003D8A92 /* ShowcaseFilterListController.m */; };
 		96D637A71C803FD8003D8A92 /* ShowcaseFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D637A01C803FD8003D8A92 /* ShowcaseFilterViewController.m */; };
 		96D637A81C803FD8003D8A92 /* ShowcaseFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */; };
-		96D637A91C803FD8003D8A92 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 96D637A21C803FD8003D8A92 /* unchecked.png */; };
-		96D637AA1C803FD8003D8A92 /* WID-small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96D637A31C803FD8003D8A92 /* WID-small.jpg */; };
 		E17E4FBA1C75C68D008D65E5 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E601C75C68D008D65E5 /* GLProgram.m */; };
 		E17E4FBB1C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E631C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m */; };
 		E17E4FBC1C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E651C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m */; };
@@ -208,15 +204,11 @@
 		5A0F44A21C74516200EED874 /* PPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectionViewCell.h; sourceTree = "<group>"; };
 		5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectionViewCell.m; sourceTree = "<group>"; };
 		5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPCollectionViewCell.xib; sourceTree = "<group>"; };
-		96D6379B1C803FD8003D8A92 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
-		96D6379C1C803FD8003D8A92 /* sample1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sample1.jpg; sourceTree = "<group>"; };
 		96D6379D1C803FD8003D8A92 /* ShowcaseFilterListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowcaseFilterListController.h; sourceTree = "<group>"; };
 		96D6379E1C803FD8003D8A92 /* ShowcaseFilterListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowcaseFilterListController.m; sourceTree = "<group>"; };
 		96D6379F1C803FD8003D8A92 /* ShowcaseFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowcaseFilterViewController.h; sourceTree = "<group>"; };
 		96D637A01C803FD8003D8A92 /* ShowcaseFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowcaseFilterViewController.m; sourceTree = "<group>"; };
 		96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowcaseFilterViewController.xib; sourceTree = "<group>"; };
-		96D637A21C803FD8003D8A92 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
-		96D637A31C803FD8003D8A92 /* WID-small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "WID-small.jpg"; sourceTree = "<group>"; };
 		E17E4E5F1C75C68D008D65E5 /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		E17E4E601C75C68D008D65E5 /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
 		E17E4E611C75C68D008D65E5 /* GPUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImage.h; sourceTree = "<group>"; };
@@ -601,15 +593,11 @@
 		96D6379A1C803FC0003D8A92 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				96D6379B1C803FD8003D8A92 /* checked.png */,
-				96D6379C1C803FD8003D8A92 /* sample1.jpg */,
 				96D6379D1C803FD8003D8A92 /* ShowcaseFilterListController.h */,
 				96D6379E1C803FD8003D8A92 /* ShowcaseFilterListController.m */,
 				96D6379F1C803FD8003D8A92 /* ShowcaseFilterViewController.h */,
 				96D637A01C803FD8003D8A92 /* ShowcaseFilterViewController.m */,
 				96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */,
-				96D637A21C803FD8003D8A92 /* unchecked.png */,
-				96D637A31C803FD8003D8A92 /* WID-small.jpg */,
 			);
 			name = Filter;
 			sourceTree = "<group>";
@@ -1122,14 +1110,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96D637A41C803FD8003D8A92 /* checked.png in Resources */,
 				5A0F44A61C74516200EED874 /* PPCollectionViewCell.xib in Resources */,
-				96D637A91C803FD8003D8A92 /* unchecked.png in Resources */,
 				E186D99D1C71711C00392C5B /* LaunchScreen.storyboard in Resources */,
 				E186D99A1C71711C00392C5B /* Assets.xcassets in Resources */,
 				E186D9951C71711C00392C5B /* Main.storyboard in Resources */,
-				96D637AA1C803FD8003D8A92 /* WID-small.jpg in Resources */,
-				96D637A51C803FD8003D8A92 /* sample1.jpg in Resources */,
 				96D637A81C803FD8003D8A92 /* ShowcaseFilterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

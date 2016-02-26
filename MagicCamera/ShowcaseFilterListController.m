@@ -243,20 +243,20 @@
 - (void)checkedAction:(id)sender
 {
     UIButton *btn = (UIButton*)sender;
-    int tag = btn.tag - 888888;
+    long tag = btn.tag - 888888;
     NSString *flag = [checkedArray objectAtIndex:tag];
     
     if([flag isEqualToString:@"0"])
     {
         [btn setBackgroundImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
         [checkedArray replaceObjectAtIndex:tag withObject:@"1"];
-        [checkedIndexArray addObject:[NSString stringWithFormat:@"%d",tag]];
+        [checkedIndexArray addObject:[NSString stringWithFormat:@"%ld",tag]];
     }
     else
     {
         [btn setBackgroundImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
         [checkedArray replaceObjectAtIndex:tag withObject:@"0"];
-         [checkedIndexArray removeObject:[NSString stringWithFormat:@"%d",tag]];
+         [checkedIndexArray removeObject:[NSString stringWithFormat:@"%ld",tag]];
         
     }
     
@@ -277,11 +277,12 @@
         UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                                         reuseIdentifier:SimpleTableIdentifier];
         
+       
         
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setBackgroundImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
         [btn addTarget:self action:@selector(checkedAction:) forControlEvents:UIControlEventTouchDown];
-        btn.frame = CGRectMake(280, 8, 22, 22);
+        btn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-44, 8, 22, 22);
         btn.tag = 888888+i;
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -299,12 +300,12 @@
             case GPUIMAGE_RGB_GREEN: cell.textLabel.text = @"RGB Green"; break;
             case GPUIMAGE_RGB_BLUE: cell.textLabel.text = @"RGB Blue"; break;
             case GPUIMAGE_RGB_RED: cell.textLabel.text = @"RGB Red"; break;
-
             case GPUIMAGE_HUE: cell.textLabel.text = @"Hue"; break;
             case GPUIMAGE_MONOCHROME: cell.textLabel.text = @"Monochrome"; break;
             case GPUIMAGE_FALSECOLOR: cell.textLabel.text = @"False color (BUILD)"; break;
             case GPUIMAGE_SHARPEN: cell.textLabel.text = @"Sharpen"; break;
-//            case GPUIMAGE_UNSHARPMASK: cell.textLabel.text = @"Unsharp mask"; addToTable = NO;break;
+            case GPUIMAGE_UNSHARPMASK: cell.textLabel.text = @"Unsharp mask";
+                addToTable = YES;break;
             case GPUIMAGE_GAMMA: cell.textLabel.text = @"Gamma"; break;
             case GPUIMAGE_TONECURVE: cell.textLabel.text = @"Tone curve";  break;
 //            case GPUIMAGE_HIGHLIGHTSHADOW: cell.textLabel.text = @"Highlights and shadows";addToTable = NO; break;

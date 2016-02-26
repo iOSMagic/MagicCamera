@@ -666,20 +666,21 @@
                 
                 filter = [[GPUImageSharpenFilter alloc] init];
             }; break;
-                //            case GPUIMAGE_UNSHARPMASK:
-                //            {
-                //                self.title = @"Unsharp Mask";
-                //                self.filterSettingsSlider.hidden = NO;
-                //
-                //                [self.filterSettingsSlider setMinimumValue:0.0];
-                //                [self.filterSettingsSlider setMaximumValue:5.0];
-                //                [self.filterSettingsSlider setValue:1.0];
-                //                 tempLabel.text = [NSString stringWithFormat:@"%.2f",1.0];
-                //
-                //                filter = [[GPUImageUnsharpMaskFilter alloc] init];
-                //
-                //                //            [(GPUImageUnsharpMaskFilter *)filter setIntensity:3.0];
-                //            }; break;
+                
+            case GPUIMAGE_UNSHARPMASK:
+            {
+                
+                self.title = @"Unsharp Mask";
+                self.filterSettingsSlider.hidden = NO;
+                [self.filterSettingsSlider setMinimumValue:0.0];
+                [self.filterSettingsSlider setMaximumValue:1.0];
+                [self.filterSettingsSlider setValue:0.0];
+                tempLabel.text = [NSString stringWithFormat:@"%.2f",1.0];
+                filter = [[GPUImageUnsharpMaskFilter alloc] init];
+                
+//            [(GPUImageUnsharpMaskFilter *)filter setIntensity:3.0];
+                
+            }; break;
             case GPUIMAGE_GAMMA:
             {
                 self.title = @"Gamma";
@@ -1650,6 +1651,8 @@
 
         case GPUIMAGE_HUE: [(GPUImageHueFilter *)filter setHue:[(UISlider *)sender value]]; break;
         case GPUIMAGE_SHARPEN: [(GPUImageSharpenFilter *)filter setSharpness:[(UISlider *)sender value]]; break;
+            
+        case GPUIMAGE_UNSHARPMASK: [(GPUImageUnsharpMaskFilter *)filter setIntensity:[(UISlider *)sender value]]; break;
 
         case GPUIMAGE_GAMMA: [(GPUImageGammaFilter *)filter setGamma:[(UISlider *)sender value]]; break;
 
