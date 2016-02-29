@@ -12,57 +12,55 @@
  */
 
 
-NSString *const myfilter = SHADER_STRING
+NSString *const kGPUImagemyfilter = SHADER_STRING
 (
- attribute vec4 position;
- attribute vec4 inputTextureCoordinate;
- const int GAUSSIAN_SAMPLES = 9;
- uniform float texelWidthOffset;
- uniform float texelHeightOffset;
- varying vec2 textureCoordinate;
- varying vec2 blurCoordinates[GAUSSIAN_SAMPLES];
- void main() {
-     gl_Position = position;
-     textureCoordinate = inputTextureCoordinate.xy;
-     int multiplier = 0;
-     vec2 blurStep; vec2
-     singleStepOffset = vec2(texelWidthOffset, texelHeightOffset);
-     for (int i = 0; i < GAUSSIAN_SAMPLES; i++) { multiplier = (i - ((GAUSSIAN_SAMPLES - 1) / 2)); blurStep = float(multiplier) * singleStepOffset; blurCoordinates[i] = inputTextureCoordinate.xy + blurStep;
-     }
- }
- uniform sampler2D inputImageTexture;
- const lowp int GAUSSIAN_SAMPLES = 9;
+ precision lowp float;
+ 
  varying highp vec2 textureCoordinate;
- varying highp vec2 blurCoordinates[GAUSSIAN_SAMPLES];
- void main() {
-     lowp vec4 sum = vec4(0.0);
-     sum += texture2D(inputImageTexture, blurCoordinates[0]) * 0.05;
-     sum += texture2D(inputImageTexture, blurCoordinates[1]) * 0.09;
-     sum += texture2D(inputImageTexture, blurCoordinates[2]) * 0.12;
-     sum += texture2D(inputImageTexture, blurCoordinates[3]) * 0.15;
-     sum += texture2D(inputImageTexture, blurCoordinates[4]) * 0.18;
-     sum += texture2D(inputImageTexture, blurCoordinates[5]) * 0.15;
-     sum += texture2D(inputImageTexture, blurCoordinates[6]) * 0.12;
-     sum += texture2D(inputImageTexture, blurCoordinates[7]) * 0.09;
-     sum += texture2D(inputImageTexture, blurCoordinates[8]) * 0.05;
-     gl_FragColor = sum;
+ 
+ uniform sampler2D inputImageTexture;
+ uniform sampler2D inputImageTexture2;
+ 
+ void main()
+ {
+     
+     vec3 texel = texture2D(inputImageTexture, textureCoordinate).rgb;
+     
+     texel = vec3(
+                  texture2D(inputImageTexture2, vec2(texel.r, .16666)).r,
+                  texture2D(inputImageTexture2, vec2(texel.g, .5)).g,
+                  texture2D(inputImageTexture2, vec2(texel.b, .83333)).b);
+     
+     gl_FragColor = vec4(texel, 1.0);
  }
  );
 @implementation MyFilter
-- (instancetype)init
+
+@synthesize mix = _mix;
+
+- (id)init;
 {
-    self = [super initWithFragmentShaderFromString:myfilter];
-    if (self) {
-        self.texelWidthOffset = 0;
-        self.texelHeightOffset = 0;
+    if (!(self = [super initWithFragmentShaderFromString:kGPUImagemyfilter]))
+    {
+        return nil;
     }
+    
+    mixUniform = [filterProgram uniformIndex:@"mixturePercent"];
+    self.mix = 0.5;
+    
     return self;
 }
 
--(void)setW:(CGFloat)w h:(CGFloat)h
+
+#pragma mark -
+#pragma mark Accessors
+
+- (void)setMix:(CGFloat)newValue;
 {
-    self.texelHeightOffset = h;
-    self.texelWidthOffset = w;
-    [self setSize:CGSizeMake(w, h) forUniform:myUniform program:filterProgram];
+    _mix = newValue;
+    
+    [self setFloat:_mix forUniform:mixUniform program:filterProgram];
 }
+
+
 @end

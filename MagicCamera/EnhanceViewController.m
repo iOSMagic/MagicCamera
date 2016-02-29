@@ -86,13 +86,13 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     model.classname = @"GPUImageSaturationFilter";
     model.selector = @"setSaturation:";
     model.showname = @"饱和度";
-    model.maxValue = 1;
+    model.maxValue = 2;
     model.minValue = 0;
     [_fileterArray addObject:model];
     
     model = [[EnhaceModel alloc] init];
     model.classname = @"MyFilter";
-    model.selector = @"setSaturation:";
+    model.selector = @"setMix:";
     model.showname = @"MyFilter";
     model.maxValue = 1;
     model.minValue = 0;
@@ -118,11 +118,18 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     model.classname = @"GPUImageContrastFilter";
     model.selector = @"setContrast:";
     model.showname = @"对比度";
-    model.maxValue = 1;
-    model.minValue = 0;
+    model.maxValue = 4.0;
+    model.minValue = 0.2;
     [_fileterArray addObject:model];
     
-
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageGammaFilter";
+    model.selector = @"setGamma:";
+    model.showname = @"伽马线";
+    model.maxValue = 3;
+    model.minValue = 0.5;
+    [_fileterArray addObject:model];
 
     model = [[EnhaceModel alloc] init];
     model.classname = @"GPUImageMonochromeFilter";
@@ -172,14 +179,7 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     model.maxValue = 1;
     model.minValue = 0;
     [_fileterArray addObject:model];
- 
-    model = [[EnhaceModel alloc] init];
-    model.classname = @"GPUImageGammaFilter";
-    model.selector = @"setGamma:";
-    model.showname = @"伽马线";
-    model.maxValue = 1;
-    model.minValue = 0;
-    [_fileterArray addObject:model];
+
     
     model = [[EnhaceModel alloc] init];
     model.classname = @"GPUImagePosterizeFilter";

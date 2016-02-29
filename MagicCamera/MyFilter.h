@@ -6,12 +6,14 @@
 //  Copyright © 2016 SongWentong. All rights reserved.
 //
 
-#import "GPUImageFilter.h"
+#import "GPUImageTwoInputFilter.h"
 
-@interface MyFilter : GPUImageFilter
+@interface MyFilter : GPUImageTwoInputFilter
 {
-    GLint myUniform;
+    GLint mixUniform;
 }
 @property(nonatomic) CGFloat texelWidthOffset;
-@property(nonatomic) CGFloat texelHeightOffset; 
+@property(nonatomic) CGFloat texelHeightOffset;
+@property(readwrite, nonatomic) CGFloat mix;
+
 @end
