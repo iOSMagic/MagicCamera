@@ -23,6 +23,7 @@
 #import <Masonry/Masonry.h>
 //#import <GPUImage/GPUImage.h>
 #include <objc/runtime.h>
+#import "IFInkwellFilter.h"
 static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 
 @interface EnhanceViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -166,6 +167,10 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     
     dic = @{@"classname":@"GPUImageOpacityFilter",@"selector":@"setOpacity:",@"showname":@"不透明度"};
     [_fileterArray addObject:dic];
+   
+    dic = @{@"classname":@"IFInkwellFilter",@"selector":@"setOpacity:",@"showname":@"IFInkwellFilter"};
+    [_fileterArray addObject:dic];
+    
 }
 
 - (void)updateFilterFromSlider:(id)sender
@@ -183,12 +188,8 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
         else
         {
             void (*objc_msgSendTyped)(id self, SEL _cmd, CGFloat arg1) = (void*)objc_msgSend;
-            
             CGFloat value = _controllerSlider.value;
-//            NSLog(@"%f",value);
             objc_msgSendTyped(_stillImageFilter, selector,value);
-//            objc_msgSend(_stillImageFilter, selector,_controllerSlider.value);
-//            objc_msgSend(<#id#>, <#SEL, ...#>)
         }
     }
     

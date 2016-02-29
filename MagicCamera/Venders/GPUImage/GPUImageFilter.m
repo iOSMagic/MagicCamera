@@ -131,15 +131,15 @@ NSString *const kGPUImagePassthroughFragmentShaderString = SHADER_STRING
     return self;
 }
 
-- (id)init;
-{
-    if (!(self = [self initWithFragmentShaderFromString:kGPUImagePassthroughFragmentShaderString]))
-    {
-		return nil;
-    }
-    
-    return self;
-}
+//- (id)init;
+//{
+//    if (!(self = [self initWithFragmentShaderFromString:kGPUImagePassthroughFragmentShaderString]))
+//    {
+//		return nil;
+//    }
+//    
+//    return self;
+//}
 
 - (void)initializeAttributes;
 {
