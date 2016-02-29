@@ -24,7 +24,7 @@
 //#import <GPUImage/GPUImage.h>
 #include <objc/runtime.h>
 #import "IFInkwellFilter.h"
-
+#import "MyFilter.h"
 static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 
 @interface EnhanceViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -81,6 +81,7 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     _fileterArray = [NSMutableArray array];
     EnhaceModel *model = nil;
 
+    
     model = [[EnhaceModel alloc] init];
     model.classname = @"GPUImageSaturationFilter";
     model.selector = @"setSaturation:";
@@ -88,8 +89,15 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     model.maxValue = 1;
     model.minValue = 0;
     [_fileterArray addObject:model];
-
-
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"MyFilter";
+    model.selector = @"setSaturation:";
+    model.showname = @"MyFilter";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
     model = [[EnhaceModel alloc] init];
     model.classname = @"GPUImageBrightnessFilter";
     model.selector = @"setBrightness:";
