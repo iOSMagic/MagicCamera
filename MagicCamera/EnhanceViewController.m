@@ -102,8 +102,8 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
     model.classname = @"GPUImageExposureFilter";
     model.selector = @"setExposure:";
     model.showname = @"曝光";
-    model.maxValue = 10;
-    model.minValue = -10;
+    model.maxValue = 2.0;
+    model.minValue = -4.0;
     [_fileterArray addObject:model];
     
     model = [[EnhaceModel alloc] init];
