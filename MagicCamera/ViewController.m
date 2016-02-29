@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "EditImageViewController.h"
 #import "FrameViewController.h"
+#import "ShowcaseFilterListController.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     
@@ -119,10 +120,24 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_autoSelectPhoto) {
+        
+        //滤镜效果
+        if (indexPath.row==1) {
+            
+            
+            ShowcaseFilterListController * filterListController = [[ShowcaseFilterListController alloc] initWithNibName:nil bundle:nil];
+            
+            [self.navigationController pushViewController:filterListController animated:YES];
+        }
+       else
+       {
+        
         NSArray *avalibleSegues = [self avalibleSegues];
         NSString *segue = avalibleSegues[indexPath.row];
         UIImage *image = [UIImage imageNamed:@"Image"];
         [self performSegueWithIdentifier:segue sender:image];
+           
+       }
     }else{
         [self pickPhoto];
     }
