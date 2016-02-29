@@ -16,6 +16,7 @@
 		96D637A61C803FD8003D8A92 /* ShowcaseFilterListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D6379E1C803FD8003D8A92 /* ShowcaseFilterListController.m */; };
 		96D637A71C803FD8003D8A92 /* ShowcaseFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D637A01C803FD8003D8A92 /* ShowcaseFilterViewController.m */; };
 		96D637A81C803FD8003D8A92 /* ShowcaseFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */; };
+		E10604601C8436870017A469 /* MyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E106045F1C8436870017A469 /* MyFilter.m */; };
 		E17E4FBA1C75C68D008D65E5 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E601C75C68D008D65E5 /* GLProgram.m */; };
 		E17E4FBB1C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E631C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m */; };
 		E17E4FBC1C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E651C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m */; };
@@ -218,6 +219,8 @@
 		96D6379F1C803FD8003D8A92 /* ShowcaseFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowcaseFilterViewController.h; sourceTree = "<group>"; };
 		96D637A01C803FD8003D8A92 /* ShowcaseFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowcaseFilterViewController.m; sourceTree = "<group>"; };
 		96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowcaseFilterViewController.xib; sourceTree = "<group>"; };
+		E106045E1C8436870017A469 /* MyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFilter.h; sourceTree = "<group>"; };
+		E106045F1C8436870017A469 /* MyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFilter.m; sourceTree = "<group>"; };
 		E17E4E5F1C75C68D008D65E5 /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		E17E4E601C75C68D008D65E5 /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
 		E17E4E611C75C68D008D65E5 /* GPUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImage.h; sourceTree = "<group>"; };
@@ -611,6 +614,8 @@
 				5A354BDB1C83EE7C0008E418 /* IFInkwellFilter.m */,
 				96D637A01C803FD8003D8A92 /* ShowcaseFilterViewController.m */,
 				96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */,
+				E106045E1C8436870017A469 /* MyFilter.h */,
+				E106045F1C8436870017A469 /* MyFilter.m */,
 			);
 			name = Filter;
 			sourceTree = "<group>";
@@ -1215,6 +1220,7 @@
 				E17E4FE31C75C68D008D65E5 /* GPUImageErosionFilter.m in Sources */,
 				E17E50471C75C68D008D65E5 /* GPUImageSubtractBlendFilter.m in Sources */,
 				E17E4FCC1C75C68D008D65E5 /* GPUImageClosingFilter.m in Sources */,
+				E10604601C8436870017A469 /* MyFilter.m in Sources */,
 				E17E504D1C75C68D008D65E5 /* GPUImageThresholdedNonMaximumSuppressionFilter.m in Sources */,
 				E17E4FD71C75C68D008D65E5 /* GPUImageContrastFilter.m in Sources */,
 				E17E50501C75C68D008D65E5 /* GPUImageToneCurveFilter.m in Sources */,
