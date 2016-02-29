@@ -14,7 +14,7 @@
 #define FOOTVIEW_HEIGHT     50
 #define MB_WeakSelfDefine(obj) __weak typeof(self) weakSelf = obj
 
-
+#import "EnhaceModel.h"
 #import <objc/message.h>
 
 #import "GPUImage.h"
@@ -24,6 +24,7 @@
 //#import <GPUImage/GPUImage.h>
 #include <objc/runtime.h>
 #import "IFInkwellFilter.h"
+
 static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 
 @interface EnhanceViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -66,137 +67,289 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
         
     }];
     
-    _controllerSlider = [[UISlider alloc] init];
-    _controllerSlider.minimumValue = 0;
-    _controllerSlider.maximumValue = 1.0;
-    _controllerSlider.value = 0.6;
-
-    [_controllerSlider addTarget:self action:@selector(updateFilterFromSlider:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_controllerSlider];
-    [_controllerSlider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(_listCollectionView.mas_top);
-        make.centerX.equalTo(weakSelf.view);
-        make.width.equalTo(weakSelf.view).offset(-60);
-        make.height.equalTo(@44);
-        
-    }];
+    
     
     [self addFilterArray];
  
-    
+    [self createcontrollerSlider];
+
     // Do any additional setup after loading the view.
 }
 
 -(void)addFilterArray
 {
     _fileterArray = [NSMutableArray array];
-    NSDictionary *dic = @{@"classname":@"GPUImageSaturationFilter",@"selector":@"setSaturation:",@"showname":@"饱和度"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageContrastFilter",@"selector":@"setContrast:",@"showname":@"对比度"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageExposureFilter",@"selector":@"setExposure:",@"showname":@"曝光"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageMonochromeFilter",@"selector":@"setIntensity:",@"showname":@"单色"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageRGBFilter",@"selector":@"setGreen:",@"showname":@"RGB绿色"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageRGBFilter",@"selector":@"setBlue:",@"showname":@"RGB蓝色"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageRGBFilter",@"selector":@"setRed:",@"showname":@"RGB红色"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageHueFilter",@"selector":@"setHue:",@"showname":@"色度"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageSharpenFilter",@"selector":@"setSharpness:",@"showname":@"锐化"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageGammaFilter",@"selector":@"setGamma:",@"showname":@"伽马线"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImagePosterizeFilter",@"selector":@"setColorLevels:",@"showname":@"色调分离 噪点效果"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageLuminanceThresholdFilter",@"selector":@"setThreshold:",@"showname":@"亮度阈"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageSwirlFilter",@"selector":@"setAngle:",@"showname":@"漩涡，中间形成卷曲的画面"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageEmbossFilter",@"selector":@"setIntensity:",@"showname":@"浮雕效果，带有点3d的感觉"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageSmoothToonFilter",@"selector":@"setBlurSize:",@"showname":@"粗旷的画风"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageBulgeDistortionFilter",@"selector":@"setScale:",@"showname":@"凸起失真，鱼眼效果"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageSphereRefractionFilter",@"selector":@"setRadius:",@"showname":@"球形折射，图形倒立"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageGlassSphereFilter",@"selector":@"setRadius:",@"showname":@"水晶球效果"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageToneCurveFilter",@"selector":@"setBlueControlPoints:",@"showname":@"色调曲线"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImagePinchDistortionFilter",@"selector":@"setScale:",@"showname":@"收缩失真，凹面镜"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageMosaicFilter",@"selector":@"setDisplayTileSize:",@"showname":@"黑白马赛克"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageVignetteFilter",@"selector":@"setVignetteEnd:",@"showname":@"晕影，形成黑色圆形边缘，突出中间图像的效果"};
-    [_fileterArray addObject:dic];
-    
-    dic = @{@"classname":@"GPUImageGaussianBlurFilter",@"selector":@"setBlurSize:",@"showname":@"高斯模糊"};
-    [_fileterArray addObject:dic];
+    EnhaceModel *model = nil;
 
-    dic = @{@"classname":@"GPUImageBilateralFilter",@"selector":@"setBlurSize:",@"showname":@"双边模糊"};
-    [_fileterArray addObject:dic];
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageSaturationFilter";
+    model.selector = @"setSaturation:";
+    model.showname = @"饱和度";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+
+
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageBrightnessFilter";
+    model.selector = @"setBrightness:";
+    model.showname = @"亮度";
+    model.maxValue = 0.5;
+    model.minValue = -0.5;
+    [_fileterArray addObject:model];
     
-    dic = @{@"classname":@"GPUImageFastBlurFilter",@"selector":@"setBlurPasses:",@"showname":@"模糊"};
-    [_fileterArray addObject:dic];
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageExposureFilter";
+    model.selector = @"setExposure:";
+    model.showname = @"曝光";
+    model.maxValue = 10;
+    model.minValue = -10;
+    [_fileterArray addObject:model];
     
-    dic = @{@"classname":@"GPUImageOpacityFilter",@"selector":@"setOpacity:",@"showname":@"不透明度"};
-    [_fileterArray addObject:dic];
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageContrastFilter";
+    model.selector = @"setContrast:";
+    model.showname = @"对比度";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+
+
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageMonochromeFilter";
+    model.selector = @"setIntensity:";
+    model.showname = @"单色";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageRGBFilter";
+    model.selector = @"setGreen:";
+    model.showname = @"RGB绿色";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageRGBFilter";
+    model.selector = @"setBlue:";
+    model.showname = @"RGB蓝色";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageRGBFilter";
+    model.selector = @"setRed:";
+    model.showname = @"RGB红色";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageHueFilter";
+    model.selector = @"setHue:";
+    model.showname = @"色度";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
    
-    dic = @{@"classname":@"IFInkwellFilter",@"selector":@"setOpacity:",@"showname":@"IFInkwellFilter"};
-    [_fileterArray addObject:dic];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageSharpenFilter";
+    model.selector = @"setSharpness:";
+    model.showname = @"锐化";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageGammaFilter";
+    model.selector = @"setGamma:";
+    model.showname = @"伽马线";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImagePosterizeFilter";
+    model.selector = @"setColorLevels:";
+    model.showname = @"色调分离 噪点效果";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageLuminanceThresholdFilter";
+    model.selector = @"setThreshold:";
+    model.showname = @"亮度阈";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageSwirlFilter";
+    model.selector = @"setAngle:";
+    model.showname = @"漩涡，中间形成卷曲的画面" ;
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageEmbossFilter";
+    model.selector = @"setIntensity:";
+    model.showname = @"浮雕效果，带有点3d的感觉" ;
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageSmoothToonFilter";
+    model.selector = @"setBlurSize:";
+    model.showname =@"粗旷的画风" ;
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageBulgeDistortionFilter";
+    model.selector = @"setScale:";
+    model.showname =@"凸起失真，鱼眼效果" ;
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageSphereRefractionFilter";
+    model.selector = @"setRadius:";
+    model.showname =@"球形折射，图形倒立";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageGlassSphereFilter";
+    model.selector = @"setRadius:";
+    model.showname =@"水晶球效果";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageToneCurveFilter";
+    model.selector = @"setBlueControlPoints:";
+    model.showname =@"色调曲线";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImagePinchDistortionFilter";
+    model.selector = @"setScale:";
+    model.showname =@"收缩失真，凹面镜";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageMosaicFilter";
+    model.selector = @"setDisplayTileSize:";
+    model.showname =@"黑白马赛克";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageVignetteFilter";
+    model.selector = @"setVignetteEnd:";
+    model.showname =@"晕影，形成黑色圆形边缘，突出中间图像的效果";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageGaussianBlurFilter";
+    model.selector = @"setBlurSize:";
+    model.showname =@"高斯模糊";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+  
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageBilateralFilter";
+    model.selector = @"setBlurSize:";
+    model.showname =@"双边模糊";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageFastBlurFilter";
+    model.selector = @"setBlurPasses:";
+    model.showname =@"模糊";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+    
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"GPUImageOpacityFilter";
+    model.selector = @"setOpacity:";
+    model.showname =@"不透明度";
+    model.maxValue = 1;
+    model.minValue = 0;
+    [_fileterArray addObject:model];
+ 
+    model = [[EnhaceModel alloc] init];
+    model.classname = @"IFInkwellFilter";
+    model.selector = @"setOpacity:";
+    model.showname =@"IFInkwellFilter";
+    model.maxValue = 1;
+    model.minValue = -1;
+    [_fileterArray addObject:model];
+ 
     
 }
 
 - (void)updateFilterFromSlider:(id)sender
 {
-    NSDictionary *dic = _fileterArray[_selectRow];
-    Class classname = NSClassFromString(dic[@"classname"]);
-    _stillImageFilter = [[classname alloc] init];
-    SEL selector = NSSelectorFromString(dic[@"selector"]);
-    if ([_stillImageFilter respondsToSelector:selector]) {
+    double delayInSeconds = 0.2;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
 
-        if (_stillImageFilter && [_stillImageFilter isKindOfClass:[GPUImageToneCurveFilter class]])
-        {
-        [(GPUImageToneCurveFilter *)_stillImageFilter setBlueControlPoints:[NSArray arrayWithObjects:[NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)], [NSValue valueWithCGPoint:CGPointMake(0.5, 0.5)], [NSValue valueWithCGPoint:CGPointMake(1.0, 0.75)], nil]];
+        EnhaceModel *model = _fileterArray[_selectRow];
+        
+        Class classname = NSClassFromString(model.classname);
+        _stillImageFilter = [[classname alloc] init];
+        SEL selector = NSSelectorFromString(model.selector);
+        if ([_stillImageFilter respondsToSelector:selector]) {
+            
+            if (_stillImageFilter && [_stillImageFilter isKindOfClass:[GPUImageToneCurveFilter class]])
+            {
+                [(GPUImageToneCurveFilter *)_stillImageFilter setBlueControlPoints:[NSArray arrayWithObjects:[NSValue valueWithCGPoint:CGPointMake(0.0, 0.0)], [NSValue valueWithCGPoint:CGPointMake(0.5, 0.5)], [NSValue valueWithCGPoint:CGPointMake(1.0, 0.75)], nil]];
+            }
+            else
+            {
+                void (*objc_msgSendTyped)(id self, SEL _cmd, CGFloat arg1) = (void*)objc_msgSend;
+                CGFloat value = _controllerSlider.value;
+                objc_msgSendTyped(_stillImageFilter, selector,value);
+            }
         }
-        else
-        {
-            void (*objc_msgSendTyped)(id self, SEL _cmd, CGFloat arg1) = (void*)objc_msgSend;
-            CGFloat value = _controllerSlider.value;
-            objc_msgSendTyped(_stillImageFilter, selector,value);
-        }
-    }
-    
-//    [_stillImageFilter setRed:_controllerSlider.value];
-    UIImage *quickFilteredImage = [_stillImageFilter imageByFilteringImage:self.originalImage];
-    self.imageView.image = quickFilteredImage;
-}
+        
+        //    [_stillImageFilter setRed:_controllerSlider.value];
+        UIImage *quickFilteredImage = [_stillImageFilter imageByFilteringImage:self.originalImage];
+        self.imageView.image = quickFilteredImage;
+        //    self.originalImage = quickFilteredImage;
+    });
+
+  }
 
 
 #pragma mark - UIScrollViewDelegate
@@ -245,14 +398,40 @@ static NSString * const PhotoInfoReuseIdentifier = @"PhotoInfoReuseIdentifier";
 {
     PPCollectionViewCell *cell = (PPCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:PhotoInfoReuseIdentifier forIndexPath:indexPath];
     cell.backgroundColor = [UIColor greenColor];
-    NSDictionary *dic = _fileterArray[indexPath.row];
-    cell.nameLabel.text = dic[@"showname"];
+    EnhaceModel *model = _fileterArray[indexPath.row];
+    cell.nameLabel.text = model.showname;
     return cell;
 }
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     _selectRow = indexPath.row;
-    [self updateFilterFromSlider:_controllerSlider];
+//    self.originalImage = self.imageView.image;
+    // 主线程执行：
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self createcontrollerSlider];
+        [self updateFilterFromSlider:_controllerSlider];
+    });
+}
+
+-(void)createcontrollerSlider
+{
+    EnhaceModel *model = _fileterArray[_selectRow];
+    
+    [_controllerSlider removeFromSuperview];
+    MB_WeakSelfDefine(self);
+    _controllerSlider = [[UISlider alloc] init];
+    _controllerSlider.minimumValue = (float)model.minValue;
+    _controllerSlider.maximumValue = (float)model.maxValue;
+    _controllerSlider.value=0.6;
+    [_controllerSlider addTarget:self action:@selector(updateFilterFromSlider:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_controllerSlider];
+    [_controllerSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(_listCollectionView.mas_top);
+        make.centerX.equalTo(weakSelf.view);
+        make.width.equalTo(weakSelf.view).offset(-60);
+        make.height.equalTo(@44);
+        
+    }];
 }
 @end

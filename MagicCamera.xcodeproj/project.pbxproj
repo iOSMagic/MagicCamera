@@ -12,6 +12,7 @@
 		5A0F44A61C74516200EED874 /* PPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */; };
 		5A354BDC1C83EE7C0008E418 /* IFImageFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A354BD91C83EE7C0008E418 /* IFImageFilter.m */; };
 		5A354BDD1C83EE7C0008E418 /* IFInkwellFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A354BDB1C83EE7C0008E418 /* IFInkwellFilter.m */; };
+		5AF5F3191C8430DF00119099 /* EnhaceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF5F3181C8430DF00119099 /* EnhaceModel.m */; };
 		96D637A61C803FD8003D8A92 /* ShowcaseFilterListController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D6379E1C803FD8003D8A92 /* ShowcaseFilterListController.m */; };
 		96D637A71C803FD8003D8A92 /* ShowcaseFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D637A01C803FD8003D8A92 /* ShowcaseFilterViewController.m */; };
 		96D637A81C803FD8003D8A92 /* ShowcaseFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */; };
@@ -210,6 +211,8 @@
 		5A354BD91C83EE7C0008E418 /* IFImageFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFImageFilter.m; path = ppFIleter/IFImageFilter.m; sourceTree = "<group>"; };
 		5A354BDA1C83EE7C0008E418 /* IFInkwellFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFInkwellFilter.h; path = ppFIleter/IFInkwellFilter.h; sourceTree = "<group>"; };
 		5A354BDB1C83EE7C0008E418 /* IFInkwellFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFInkwellFilter.m; path = ppFIleter/IFInkwellFilter.m; sourceTree = "<group>"; };
+		5AF5F3171C8430DF00119099 /* EnhaceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnhaceModel.h; sourceTree = "<group>"; };
+		5AF5F3181C8430DF00119099 /* EnhaceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnhaceModel.m; sourceTree = "<group>"; };
 		96D6379D1C803FD8003D8A92 /* ShowcaseFilterListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowcaseFilterListController.h; sourceTree = "<group>"; };
 		96D6379E1C803FD8003D8A92 /* ShowcaseFilterListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowcaseFilterListController.m; sourceTree = "<group>"; };
 		96D6379F1C803FD8003D8A92 /* ShowcaseFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowcaseFilterViewController.h; sourceTree = "<group>"; };
@@ -1030,6 +1033,8 @@
 				E186DBE91C71B0FC00392C5B /* EditImageViewController.m */,
 				E186DBEB1C72C9AE00392C5B /* EnhanceViewController.h */,
 				E186DBEC1C72C9AE00392C5B /* EnhanceViewController.m */,
+				5AF5F3171C8430DF00119099 /* EnhaceModel.h */,
+				5AF5F3181C8430DF00119099 /* EnhaceModel.m */,
 				5A0F44A21C74516200EED874 /* PPCollectionViewCell.h */,
 				5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */,
 				5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */,
@@ -1138,6 +1143,7 @@
 				E17E50341C75C68D008D65E5 /* GPUImageRGBOpeningFilter.m in Sources */,
 				E17E4FFF1C75C68D008D65E5 /* GPUImageHSBFilter.m in Sources */,
 				E17E505D1C75C68D008D65E5 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
+				5AF5F3191C8430DF00119099 /* EnhaceModel.m in Sources */,
 				E17E4FDC1C75C68D008D65E5 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				E17E50491C75C68D008D65E5 /* GPUImageTextureInput.m in Sources */,
 				E17E4FEB1C75C68D008D65E5 /* GPUImageFourInputFilter.m in Sources */,
