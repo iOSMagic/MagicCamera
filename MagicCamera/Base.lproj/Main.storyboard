@@ -109,6 +109,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1P-hG-GBg">
                                 <rect key="frame" x="30" y="562" width="75" height="30"/>
                                 <state key="normal" title="保存到相册"/>
+                                <connections>
+                                    <action selector="saveToPhotos:" destination="6yP-hO-VgR" eventType="touchUpInside" id="nSt-FV-Nfi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

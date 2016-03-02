@@ -7,7 +7,7 @@
 //
 
 #import "ResultDisplayViewController.h"
-
+@import Photos;
 @interface ResultDisplayViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
@@ -25,6 +25,25 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+//保存到相册
+- (IBAction)saveToPhotos:(id)sender {
+    if ([[[UIDevice currentDevice] systemVersion] floatValue]>=9) {
+        
+        [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
+            PHAssetCreationRequest *request = [PHAssetCreationRequest creationRequestForAsset];
+            NSData *data = UIImageJPEGRepresentation(_resultImage, 1.0);
+            [request addResourceWithType:PHAssetResourceTypePhoto data:data options:nil];
+            
+        } completionHandler:^(BOOL success, NSError * _Nullable error) {
+            
+        }];
+        
+        
+        
+    }
 }
 
 /*

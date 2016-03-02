@@ -209,7 +209,8 @@
 {
     _styleCollectionView.hidden = YES;
     _typeCollectionView.hidden = YES;
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0);
+    CGSize size = view.bounds.size;
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(size.width, size.height-40), YES, 0);
     [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
