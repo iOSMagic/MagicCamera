@@ -7,7 +7,8 @@
 //
 
 #import "FrameViewController.h"
-
+#import "ResultDisplayViewController.h"
+#import "UIViewController+IBHelper.h"
 @interface FrameViewController () <UIGestureRecognizerDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     
@@ -188,7 +189,12 @@
             case 4:
             {
                 //进入
-                [self.navigationController popViewControllerAnimated:YES];
+//                [self.navigationController popViewControllerAnimated:YES];
+                ResultDisplayViewController *vc = [ResultDisplayViewController instanceFromIB];
+                
+                UIImage *image = [self snapshot:self.view];
+                vc.resultImage = image;
+                [self.navigationController pushViewController:vc animated:YES];
             }
                 break;
                 
@@ -197,6 +203,19 @@
         }
         
     }
+}
+
+- (UIImage *)snapshot:(UIView *)view
+{
+    _styleCollectionView.hidden = YES;
+    _typeCollectionView.hidden = YES;
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, YES, 0);
+    [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:YES];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _styleCollectionView.hidden = NO;
+    _typeCollectionView.hidden = NO;
+    return image;
 }
 
 

@@ -18,6 +18,8 @@
 		96D637A81C803FD8003D8A92 /* ShowcaseFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 96D637A11C803FD8003D8A92 /* ShowcaseFilterViewController.xib */; };
 		A341A61C1C859A6800D5900D /* MosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = A341A61B1C859A6800D5900D /* MosaicView.m */; };
 		E10604601C8436870017A469 /* MyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E106045F1C8436870017A469 /* MyFilter.m */; };
+		E10604631C8692130017A469 /* ResultDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10604621C8692130017A469 /* ResultDisplayViewController.m */; };
+		E10604671C8692D40017A469 /* UIViewController+IBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E10604661C8692D40017A469 /* UIViewController+IBHelper.m */; };
 		E17E4FBA1C75C68D008D65E5 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E601C75C68D008D65E5 /* GLProgram.m */; };
 		E17E4FBB1C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E631C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m */; };
 		E17E4FBC1C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E651C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m */; };
@@ -224,6 +226,10 @@
 		A341A61B1C859A6800D5900D /* MosaicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicView.m; sourceTree = "<group>"; };
 		E106045E1C8436870017A469 /* MyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFilter.h; sourceTree = "<group>"; };
 		E106045F1C8436870017A469 /* MyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFilter.m; sourceTree = "<group>"; };
+		E10604611C8692130017A469 /* ResultDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultDisplayViewController.h; sourceTree = "<group>"; };
+		E10604621C8692130017A469 /* ResultDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDisplayViewController.m; sourceTree = "<group>"; };
+		E10604651C8692D40017A469 /* UIViewController+IBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IBHelper.h"; sourceTree = "<group>"; };
+		E10604661C8692D40017A469 /* UIViewController+IBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IBHelper.m"; sourceTree = "<group>"; };
 		E17E4E5F1C75C68D008D65E5 /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		E17E4E601C75C68D008D65E5 /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
 		E17E4E611C75C68D008D65E5 /* GPUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImage.h; sourceTree = "<group>"; };
@@ -1054,6 +1060,10 @@
 				A341A61B1C859A6800D5900D /* MosaicView.m */,
 				E186DBF41C72CA0700392C5B /* FrameViewController.h */,
 				E186DBF51C72CA0700392C5B /* FrameViewController.m */,
+				E10604611C8692130017A469 /* ResultDisplayViewController.h */,
+				E10604621C8692130017A469 /* ResultDisplayViewController.m */,
+				E10604651C8692D40017A469 /* UIViewController+IBHelper.h */,
+				E10604661C8692D40017A469 /* UIViewController+IBHelper.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1247,6 +1257,7 @@
 				E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */,
 				E17E4FFE1C75C68D008D65E5 /* GPUImageHoughTransformLineDetector.m in Sources */,
 				E17E50061C75C68D008D65E5 /* GPUImageLanczosResamplingFilter.m in Sources */,
+				E10604671C8692D40017A469 /* UIViewController+IBHelper.m in Sources */,
 				E17E4FD21C75C68D008D65E5 /* GPUImageColorLocalBinaryPatternFilter.m in Sources */,
 				E17E50161C75C68D008D65E5 /* GPUImageMonochromeFilter.m in Sources */,
 				E17E4FE71C75C68D008D65E5 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
@@ -1292,6 +1303,7 @@
 				E17E50391C75C68D008D65E5 /* GPUImageSharpenFilter.m in Sources */,
 				E17E4FF81C75C68D008D65E5 /* GPUImageHighlightShadowFilter.m in Sources */,
 				E17E4FD41C75C68D008D65E5 /* GPUImageColorPackingFilter.m in Sources */,
+				E10604631C8692130017A469 /* ResultDisplayViewController.m in Sources */,
 				E17E505E1C75C68D008D65E5 /* GPUImageWhiteBalanceFilter.m in Sources */,
 				E17E504B1C75C68D008D65E5 /* GPUImageThreeInputFilter.m in Sources */,
 				E186DBEA1C71B0FC00392C5B /* EditImageViewController.m in Sources */,

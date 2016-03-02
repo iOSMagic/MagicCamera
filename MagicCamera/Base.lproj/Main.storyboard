@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qbG-xP-wGa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qbG-xP-wGa">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -91,6 +91,38 @@
             </objects>
             <point key="canvasLocation" x="1288" y="-5"/>
         </scene>
+        <!--Result Display View Controller-->
+        <scene sceneID="qdA-4a-bEW">
+            <objects>
+                <viewController storyboardIdentifier="ResultDisplayViewController" id="6yP-hO-VgR" customClass="ResultDisplayViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eQg-at-N03"/>
+                        <viewControllerLayoutGuide type="bottom" id="J2E-fg-aht"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iOu-ue-co4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5PE-Cg-xDZ">
+                                <rect key="frame" x="30" y="30" width="540" height="540"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5PE-Cg-xDZ" firstAttribute="centerY" secondItem="iOu-ue-co4" secondAttribute="centerY" id="5oJ-7c-xak"/>
+                            <constraint firstItem="J2E-fg-aht" firstAttribute="top" secondItem="5PE-Cg-xDZ" secondAttribute="bottom" constant="30" id="OH4-kG-unn"/>
+                            <constraint firstItem="5PE-Cg-xDZ" firstAttribute="centerX" secondItem="iOu-ue-co4" secondAttribute="centerX" id="T9D-kw-Uja"/>
+                            <constraint firstItem="5PE-Cg-xDZ" firstAttribute="leading" secondItem="iOu-ue-co4" secondAttribute="leading" constant="30" id="amF-WC-bXl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="5PE-Cg-xDZ" id="PeI-jZ-uD7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b3g-af-eFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="315" y="1510"/>
+        </scene>
         <!--Mosaic View Controller-->
         <scene sceneID="e1Z-Sv-SDs">
             <objects>
@@ -125,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tza-hQ-09F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="651"/>
+            <point key="canvasLocation" x="1252" y="663"/>
         </scene>
         <!--Frame View Controller-->
         <scene sceneID="elf-H0-3Ch">
