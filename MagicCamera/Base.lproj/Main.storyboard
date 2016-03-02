@@ -104,15 +104,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5PE-Cg-xDZ">
-                                <rect key="frame" x="30" y="30" width="540" height="540"/>
+                                <rect key="frame" x="30" y="60" width="540" height="480"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1P-hG-GBg">
+                                <rect key="frame" x="30" y="562" width="75" height="30"/>
+                                <state key="normal" title="保存到相册"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5PE-Cg-xDZ" firstAttribute="centerY" secondItem="iOu-ue-co4" secondAttribute="centerY" id="5oJ-7c-xak"/>
-                            <constraint firstItem="J2E-fg-aht" firstAttribute="top" secondItem="5PE-Cg-xDZ" secondAttribute="bottom" constant="30" id="OH4-kG-unn"/>
+                            <constraint firstItem="J2E-fg-aht" firstAttribute="top" secondItem="5PE-Cg-xDZ" secondAttribute="bottom" constant="60" id="OH4-kG-unn"/>
                             <constraint firstItem="5PE-Cg-xDZ" firstAttribute="centerX" secondItem="iOu-ue-co4" secondAttribute="centerX" id="T9D-kw-Uja"/>
                             <constraint firstItem="5PE-Cg-xDZ" firstAttribute="leading" secondItem="iOu-ue-co4" secondAttribute="leading" constant="30" id="amF-WC-bXl"/>
+                            <constraint firstItem="p1P-hG-GBg" firstAttribute="leading" secondItem="iOu-ue-co4" secondAttribute="leading" constant="30" id="cCv-4p-ODH"/>
+                            <constraint firstItem="J2E-fg-aht" firstAttribute="top" secondItem="p1P-hG-GBg" secondAttribute="bottom" constant="8" id="cQy-mG-kyP"/>
                         </constraints>
                     </view>
                     <connections>
