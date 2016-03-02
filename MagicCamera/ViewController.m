@@ -99,9 +99,30 @@
 }
 
 #pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self avalibleEffect].count;
+    NSInteger number = 0;
+    switch (section) {
+        case 0:
+        {
+            number = [self avalibleEffect].count;
+        }
+            break;
+        case 1:
+        {
+
+        }
+            break;
+            
+        default:
+            break;
+    }
+    return number;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
