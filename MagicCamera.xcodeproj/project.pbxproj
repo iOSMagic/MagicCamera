@@ -20,6 +20,7 @@
 		E10604601C8436870017A469 /* MyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E106045F1C8436870017A469 /* MyFilter.m */; };
 		E10604631C8692130017A469 /* ResultDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10604621C8692130017A469 /* ResultDisplayViewController.m */; };
 		E10604671C8692D40017A469 /* UIViewController+IBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E10604661C8692D40017A469 /* UIViewController+IBHelper.m */; };
+		E152D9EB1C89333100FE2860 /* CIEnhanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E152D9EA1C89333100FE2860 /* CIEnhanceViewController.m */; };
 		E17E4FBA1C75C68D008D65E5 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E601C75C68D008D65E5 /* GLProgram.m */; };
 		E17E4FBB1C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E631C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m */; };
 		E17E4FBC1C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E651C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m */; };
@@ -230,6 +231,8 @@
 		E10604621C8692130017A469 /* ResultDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDisplayViewController.m; sourceTree = "<group>"; };
 		E10604651C8692D40017A469 /* UIViewController+IBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IBHelper.h"; sourceTree = "<group>"; };
 		E10604661C8692D40017A469 /* UIViewController+IBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IBHelper.m"; sourceTree = "<group>"; };
+		E152D9E91C89333100FE2860 /* CIEnhanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIEnhanceViewController.h; sourceTree = "<group>"; };
+		E152D9EA1C89333100FE2860 /* CIEnhanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIEnhanceViewController.m; sourceTree = "<group>"; };
 		E17E4E5F1C75C68D008D65E5 /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
 		E17E4E601C75C68D008D65E5 /* GLProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLProgram.m; sourceTree = "<group>"; };
 		E17E4E611C75C68D008D65E5 /* GPUImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImage.h; sourceTree = "<group>"; };
@@ -627,6 +630,15 @@
 				E106045F1C8436870017A469 /* MyFilter.m */,
 			);
 			name = Filter;
+			sourceTree = "<group>";
+		};
+		E152D9E81C89330E00FE2860 /* Core Image */ = {
+			isa = PBXGroup;
+			children = (
+				E152D9E91C89333100FE2860 /* CIEnhanceViewController.h */,
+				E152D9EA1C89333100FE2860 /* CIEnhanceViewController.m */,
+			);
+			name = "Core Image";
 			sourceTree = "<group>";
 		};
 		E17E4E5E1C75C68D008D65E5 /* GPUImage */ = {
@@ -1038,6 +1050,7 @@
 		E186D9A81C71AAE600392C5B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E152D9E81C89330E00FE2860 /* Core Image */,
 				96D6379A1C803FC0003D8A92 /* Filter */,
 				E186D98D1C71711C00392C5B /* AppDelegate.h */,
 				E186D98E1C71711C00392C5B /* AppDelegate.m */,
@@ -1209,6 +1222,7 @@
 				E17E504A1C75C68D008D65E5 /* GPUImageTextureOutput.m in Sources */,
 				E17E50581C75C68D008D65E5 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				E17E50601C75C68D008D65E5 /* GPUImageZoomBlurFilter.m in Sources */,
+				E152D9EB1C89333100FE2860 /* CIEnhanceViewController.m in Sources */,
 				E17E4FC01C75C68D008D65E5 /* GPUImageAmatorkaFilter.m in Sources */,
 				E17E4FE11C75C68D008D65E5 /* GPUImageDivideBlendFilter.m in Sources */,
 				E17E505F1C75C68D008D65E5 /* GPUImageXYDerivativeFilter.m in Sources */,

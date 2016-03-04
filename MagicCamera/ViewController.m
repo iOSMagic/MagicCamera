@@ -10,6 +10,8 @@
 #import "EditImageViewController.h"
 #import "FrameViewController.h"
 #import "ShowcaseFilterListController.h"
+#import "UIViewController+IBHelper.h"
+#import "CIEnhanceViewController.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     
@@ -115,7 +117,7 @@
             break;
         case 1:
         {
-
+            number = 1;
         }
             break;
             
@@ -133,32 +135,70 @@
 {
     UITableViewCell *cell = nil;
     cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-    cell.textLabel.text = [self avalibleEffect][indexPath.row];
+    switch (indexPath.section) {
+        case 0:
+        {
+            cell.textLabel.text = @[@"增强",@"滤镜",@"马赛克",@"边框"][indexPath.row];
+        }
+            break;
+            case 1:
+        {
+            cell.textLabel.text = @"增强";
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
     return cell;
+}
+
+- (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSArray *titles = @[@"GPUImage",@"Core Image"];
+    return titles[section];
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (_autoSelectPhoto) {
-        
-        //滤镜效果
-        if (indexPath.row==1) {
-            
-            
-            ShowcaseFilterListController * filterListController = [[ShowcaseFilterListController alloc] initWithNibName:nil bundle:nil];
-            
-            [self.navigationController pushViewController:filterListController animated:YES];
+        switch (indexPath.section) {
+            case 0:
+            {
+                //滤镜效果
+                if (indexPath.row==1) {
+                    
+                    
+                    ShowcaseFilterListController * filterListController = [[ShowcaseFilterListController alloc] initWithNibName:nil bundle:nil];
+                    
+                    [self.navigationController pushViewController:filterListController animated:YES];
+                }
+                else
+                {
+                    
+                    NSArray *avalibleSegues = [self avalibleSegues];
+                    NSString *segue = avalibleSegues[indexPath.row];
+                    UIImage *image = [UIImage imageNamed:@"Image"];
+                    [self performSegueWithIdentifier:segue sender:image];
+                    
+                }
+            }
+                break;
+            case 1:
+            {
+                CIEnhanceViewController *vc = [CIEnhanceViewController instanceFromIB];
+                vc.originalImage = [UIImage imageNamed:@"Image"];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+                
+            default:
+                break;
         }
-       else
-       {
         
-        NSArray *avalibleSegues = [self avalibleSegues];
-        NSString *segue = avalibleSegues[indexPath.row];
-        UIImage *image = [UIImage imageNamed:@"Image"];
-        [self performSegueWithIdentifier:segue sender:image];
-           
-       }
+        
     }else{
         [self pickPhoto];
     }

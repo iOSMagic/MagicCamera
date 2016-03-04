@@ -274,5 +274,23 @@
             </objects>
             <point key="canvasLocation" x="1032" y="2423"/>
         </scene>
+        <!--Enhance View Controller-->
+        <scene sceneID="hmq-hl-tqV">
+            <objects>
+                <viewController storyboardIdentifier="CIEnhanceViewController" id="E9g-KL-ggF" customClass="CIEnhanceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0oj-qZ-EFo"/>
+                        <viewControllerLayoutGuide type="bottom" id="O1Z-Yn-XgN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bNA-0f-ajs">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Glw-b7-jXn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1699" y="2423"/>
+        </scene>
     </scenes>
 </document>
