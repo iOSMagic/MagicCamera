@@ -23,26 +23,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        CIImage *myImage = [CIImage imageWithCGImage:self.originalImage.CGImage];
+        CIContext *context = [CIContext contextWithOptions:nil];               // 1
+        CIImage *image = [CIImage imageWithCGImage:self.originalImage.CGImage];               // 2
+        CIFilter *filter = [CIFilter filterWithName:@"CISepiaTone"];           // 3
+        [filter setValue:image forKey:kCIInputImageKey];
+        [filter setValue:@0.8f forKey:kCIInputIntensityKey];
+        CIImage *result = [filter valueForKey:kCIOutputImageKey];              // 4
+        CGRect extent = [result extent];
+        CGImageRef cgImage = [context createCGImage:result fromRect:extent];   // 5
         
-        /*
-         NSDictionary *options = @{ CIDetectorImageOrientation :
-         [[myImage properties] valueForKey:(NSString*)kCGImagePropertyOrientation] };
-         */
-        NSArray *adjustments = [myImage autoAdjustmentFiltersWithOptions:nil];
-        for (CIFilter *filter in adjustments) {
-            [filter setValue:myImage forKey:kCIInputImageKey];
-            myImage = filter.outputImage;
-        }
-        UIImage *image = [UIImage imageWithCIImage:myImage scale:1.0 orientation:UIImageOrientationUp];
-        dispatch_sync(dispatch_get_main_queue(), ^{
-//            self.imageView.image = image;
-            ResultDisplayViewController *vc = [ResultDisplayViewController instanceFromIB];
-            vc.resultImage = image;
-            [self.navigationController pushViewController:vc animated:YES];
-//            CGSize size = self.scrollView.contentSize;
-//            NSLog(@"%@",NSStringFromCGSize(size));
-        });
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.imageView.image = [UIImage imageWithCGImage:cgImage];
+        }];
     });
 
 
