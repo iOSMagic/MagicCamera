@@ -11,5 +11,9 @@
 
 //Core Image 使用的增强效果
 @interface CIEnhanceViewController : EditImageViewController
+{
+    
+}
+@property (weak, nonatomic) IBOutlet UICollectionView *typeCollection;
 
 @end
