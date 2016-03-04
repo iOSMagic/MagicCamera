@@ -39,8 +39,16 @@
     self.modelCollection = [NSMutableArray array];
     
     
+    NSMutableArray *rightBarButtonItems = [NSMutableArray new];
+    [rightBarButtonItems addObject:[[UIBarButtonItem alloc]initWithTitle:@"去掉效果" style:UIBarButtonItemStylePlain target:self action:@selector(resetEffects:)]];
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
     [self addModels];
     //    self.imageView.contentMode = UIViewContentModeCenter;
+}
+
+-(void)resetEffects:(id)sender
+{
+    self.imageView.image = self.originalImage;
 }
 
 -(void)addModels
@@ -56,6 +64,27 @@
     model = [CIModel new];
     model.filterName = @"CIColorCrossPolynomial";
     model.desc = @"颜色调整";
+    [_modelCollection addObject:model];
+    
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CIColorInvert";
+    model.desc = @"颜色对调";
+    [_modelCollection addObject:model];
+//    model.inputs =
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CIBumpDistortion";
+    model.desc = @"隆胸";
+    [model.inputs setValue:[NSNumber numberWithFloat:100] forKey:kCIAttributeTypeDistance];
+    [_modelCollection addObject:model];
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CICircularWrap";
+    model.desc = @"圆圈";
     [_modelCollection addObject:model];
 }
 
