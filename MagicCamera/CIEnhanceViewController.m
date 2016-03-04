@@ -53,6 +53,7 @@
 
 -(void)addModels
 {
+    
     CIModel *model = [CIModel new];
     //灰色
     model.filterName = @"CISepiaTone";
@@ -60,6 +61,9 @@
     [model.inputs setValue:@0.8f forKey:kCIInputIntensityKey];
     [_modelCollection addObject:model];
     
+
+
+//    [self.typeCollection reloadData];
     
     model = [CIModel new];
     model.filterName = @"CIColorCrossPolynomial";
@@ -86,6 +90,32 @@
     model.filterName = @"CICircularWrap";
     model.desc = @"圆圈";
     [_modelCollection addObject:model];
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CIHoleDistortion";
+    model.desc = @"洞";
+    [_modelCollection addObject:model];
+    
+    model = [CIModel new];
+    model.filterName = @"CILineOverlay";
+    model.desc = @"铅笔画";
+    [_modelCollection addObject:model];
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CIGaussianBlur";
+    model.desc = @"高斯模糊";
+    [_modelCollection addObject:model];
+}
+
+-(void)addModelWithBlock:(void(^)(CIModel *aModel))block{
+    __block CIModel *model = [CIModel new];
+    if (block) {
+        block(model);
+        [_modelCollection addObject:model];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
