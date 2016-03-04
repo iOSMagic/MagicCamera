@@ -107,13 +107,42 @@
     model.filterName = @"CIGaussianBlur";
     model.desc = @"高斯模糊";
     [_modelCollection addObject:model];
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CIPhotoEffectMono";
+    model.desc = @"单色";
+    [_modelCollection addObject:model];
+    
+    model = [CIModel new];
+    model.filterName = @"CIColorClamp";
+    model.desc = @"限制颜色范围";
+    [_modelCollection addObject:model];
+    
+    model = [CIModel new];
+    model.filterName = @"CICircularScreen";
+    model.desc = @"圆圈";
+    [_modelCollection addObject:model];
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CIDotScreen";
+    model.desc = @"半色调";
+    [_modelCollection addObject:model];
+    
+    
+    model = [CIModel new];
+    model.filterName = @"CISharpenLuminance";
+    model.desc = @"锐化";
+    [_modelCollection addObject:model];
 }
 
 -(void)addModelWithBlock:(void(^)(CIModel *aModel))block{
     __block CIModel *model = [CIModel new];
+    [_modelCollection addObject:model];
     if (block) {
         block(model);
-        [_modelCollection addObject:model];
+        
     }
     
 }
@@ -161,7 +190,7 @@
         CIImage *result = [filter valueForKey:kCIOutputImageKey];              // 4
         CGRect extent = [result extent];
         CGImageRef cgImage = [context createCGImage:result fromRect:extent];   // 5
-        
+
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.imageView.image = [UIImage imageWithCGImage:cgImage];
         }];

@@ -161,7 +161,7 @@
             break;
             case 1:
         {
-            cell.textLabel.text = @[@"深褐色调",@"增强"][indexPath.row];
+            cell.textLabel.text = @[@"照片",@"视频"][indexPath.row];
         }
             break;
             
