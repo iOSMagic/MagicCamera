@@ -8,6 +8,7 @@
 
 #import "CIEnhanceViewController.h"
 @import CoreImage;
+@import ImageIO;
 @interface CIEnhanceViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 {
     
@@ -19,6 +20,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    CIImage *myImage = [CIImage imageWithCGImage:self.originalImage.CGImage];
+    /*
+    NSDictionary *options = @{ CIDetectorImageOrientation :
+                                   [[myImage properties] valueForKey:(NSString*)kCGImagePropertyOrientation] };
+     */
+    NSArray *adjustments = [myImage autoAdjustmentFiltersWithOptions:nil];
+    for (CIFilter *filter in adjustments) {
+        [filter setValue:myImage forKey:kCIInputImageKey];
+        myImage = filter.outputImage;
+    }
+    self.imageView.image = [UIImage imageWithCIImage:myImage];
+//    self.imageView.contentMode = UIViewContentModeCenter;
 }
 
 - (void)didReceiveMemoryWarning {

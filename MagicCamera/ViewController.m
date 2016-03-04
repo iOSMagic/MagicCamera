@@ -143,7 +143,7 @@
             break;
             case 1:
         {
-            cell.textLabel.text = @"增强";
+            cell.textLabel.text = @[@"自动增强",@"增强"][indexPath.row];
         }
             break;
             
@@ -188,6 +188,7 @@
                 break;
             case 1:
             {
+                
                 CIEnhanceViewController *vc = [CIEnhanceViewController instanceFromIB];
                 vc.originalImage = [UIImage imageNamed:@"Image"];
                 [self.navigationController pushViewController:vc animated:YES];
