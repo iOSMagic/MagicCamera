@@ -38,7 +38,7 @@
 {
     [super viewDidAppear:animated];
     
-    [_tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
+//    [_tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -90,12 +90,30 @@
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info
 {
-    
+    UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
     [picker dismissViewControllerAnimated:YES completion:^{
-        UIImage *image = [info valueForKey:UIImagePickerControllerOriginalImage];
-        NSArray *avalibleSegues = [self avalibleSegues];
-        NSString *segue = avalibleSegues[_tableView.indexPathForSelectedRow.row];
-        [self performSegueWithIdentifier:segue sender:image];
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+        switch (indexPath.section) {
+            case 0:
+            {
+                
+                NSArray *avalibleSegues = [self avalibleSegues];
+                NSString *segue = avalibleSegues[_tableView.indexPathForSelectedRow.row];
+                [self performSegueWithIdentifier:segue sender:image];
+            }
+                break;
+            case 1:
+            {
+                CIEnhanceViewController *vc = [CIEnhanceViewController instanceFromIB];
+                vc.originalImage = image;
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+        
     }];
 
 }

@@ -27,7 +27,7 @@
     _imageView.contentMode = UIViewContentModeScaleAspectFit;
     _imageView.image = _originalImage;
     _scrollView.contentSize = _scrollView.bounds.size;
-    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
 
 }
 -(void)viewDidAppear:(BOOL)animated

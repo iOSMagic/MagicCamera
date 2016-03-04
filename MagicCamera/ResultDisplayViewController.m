@@ -19,6 +19,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.imageView.image = _resultImage;
+    [self.imageView setNeedsDisplay];
+//    self.imageView.contentMode = ui
     
 }
 
@@ -35,6 +37,9 @@
         [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
             PHAssetCreationRequest *request = [PHAssetCreationRequest creationRequestForAsset];
             NSData *data = UIImageJPEGRepresentation(_resultImage, 1.0);
+            if (!data) {
+                data = UIImagePNGRepresentation(_resultImage);
+            }
             [request addResourceWithType:PHAssetResourceTypePhoto data:data options:nil];
             
         } completionHandler:^(BOOL success, NSError * _Nullable error) {

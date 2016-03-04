@@ -646,6 +646,13 @@
 			name = "Core Image";
 			sourceTree = "<group>";
 		};
+		E152D9EF1C89618100FE2860 /* Venders */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Venders;
+			sourceTree = "<group>";
+		};
 		E17E4E5E1C75C68D008D65E5 /* GPUImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1027,6 +1034,7 @@
 		E186D9891C71711C00392C5B /* MagicCamera */ = {
 			isa = PBXGroup;
 			children = (
+				E152D9EF1C89618100FE2860 /* Venders */,
 				E186D9A81C71AAE600392C5B /* Classes */,
 				E186D9AA1C71AAF300392C5B /* IB */,
 				E186D9A91C71AAEE00392C5B /* Res */,

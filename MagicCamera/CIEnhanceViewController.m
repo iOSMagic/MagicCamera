@@ -9,6 +9,8 @@
 #import "CIEnhanceViewController.h"
 @import CoreImage;
 @import ImageIO;
+#import "ResultDisplayViewController.h"
+#import "UIViewController+IBHelper.h"
 @interface CIEnhanceViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 {
     
@@ -20,17 +22,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    CIImage *myImage = [CIImage imageWithCGImage:self.originalImage.CGImage];
-    /*
-    NSDictionary *options = @{ CIDetectorImageOrientation :
-                                   [[myImage properties] valueForKey:(NSString*)kCGImagePropertyOrientation] };
-     */
-    NSArray *adjustments = [myImage autoAdjustmentFiltersWithOptions:nil];
-    for (CIFilter *filter in adjustments) {
-        [filter setValue:myImage forKey:kCIInputImageKey];
-        myImage = filter.outputImage;
-    }
-    self.imageView.image = [UIImage imageWithCIImage:myImage];
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        CIImage *myImage = [CIImage imageWithCGImage:self.originalImage.CGImage];
+        
+        /*
+         NSDictionary *options = @{ CIDetectorImageOrientation :
+         [[myImage properties] valueForKey:(NSString*)kCGImagePropertyOrientation] };
+         */
+        NSArray *adjustments = [myImage autoAdjustmentFiltersWithOptions:nil];
+        for (CIFilter *filter in adjustments) {
+            [filter setValue:myImage forKey:kCIInputImageKey];
+            myImage = filter.outputImage;
+        }
+        UIImage *image = [UIImage imageWithCIImage:myImage scale:1.0 orientation:UIImageOrientationUp];
+        dispatch_sync(dispatch_get_main_queue(), ^{
+//            self.imageView.image = image;
+            ResultDisplayViewController *vc = [ResultDisplayViewController instanceFromIB];
+            vc.resultImage = image;
+            [self.navigationController pushViewController:vc animated:YES];
+//            CGSize size = self.scrollView.contentSize;
+//            NSLog(@"%@",NSStringFromCGSize(size));
+        });
+    });
+
+
 //    self.imageView.contentMode = UIViewContentModeCenter;
 }
 
