@@ -14,6 +14,6 @@
 {
     
 }
-//@property (weak, nonatomic) IBOutlet UICollectionView *typeCollection;
+@property (weak, nonatomic) IBOutlet UICollectionView *typeCollection;
 
 @end
