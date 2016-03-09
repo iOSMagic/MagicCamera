@@ -12,6 +12,7 @@
 #import "ShowcaseFilterListController.h"
 #import "UIViewController+IBHelper.h"
 #import "CIEnhanceViewController.h"
+#import "VideoCaptureVC.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     
@@ -38,7 +39,7 @@
 {
     [super viewDidAppear:animated];
     
-//    [_tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
+    //    [_tableView deselectRowAtIndexPath:_tableView.indexPathForSelectedRow animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -115,13 +116,13 @@
         }
         
     }];
-
+    
 }
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -134,6 +135,11 @@
         }
             break;
         case 1:
+        {
+            number = 1;
+        }
+            break;
+        case 2:
         {
             number = 1;
         }
@@ -159,9 +165,14 @@
             cell.textLabel.text = @[@"增强",@"滤镜",@"马赛克",@"边框"][indexPath.row];
         }
             break;
-            case 1:
+        case 1:
         {
             cell.textLabel.text = @[@"照片",@"视频"][indexPath.row];
+        }
+            break;
+        case 2:
+        {
+            cell.textLabel.text = @[@"录像"][indexPath.row];
         }
             break;
             
@@ -174,17 +185,17 @@
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSArray *titles = @[@"GPUImage",@"Core Image"];
+    NSArray *titles = @[@"GPUImage",@"Core Image",@"AVFoundation"];
     return titles[section];
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_autoSelectPhoto) {
-        switch (indexPath.section) {
-            case 0:
-            {
+    switch (indexPath.section) {
+        case 0:
+        {
+            if (_autoSelectPhoto) {
                 //滤镜效果
                 if (indexPath.row==1) {
                     
@@ -202,26 +213,36 @@
                     [self performSegueWithIdentifier:segue sender:image];
                     
                 }
+            }else{
+                [self pickPhoto];
             }
-                break;
-            case 1:
-            {
-                
+            
+        }
+            break;
+        case 1:
+        {
+            if (_autoSelectPhoto) {
                 CIEnhanceViewController *vc = [CIEnhanceViewController instanceFromIB];
                 vc.originalImage = [UIImage imageNamed:@"Image"];
                 [self.navigationController pushViewController:vc animated:YES];
+            }else{
+                [self pickPhoto];
             }
-                break;
-                
-            default:
-                break;
+            
         }
-        
-        
-    }else{
-        [self pickPhoto];
+            break;
+        case 2:
+        {
+            VideoCaptureVC *vc = [VideoCaptureVC instanceFromIB];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            break;
+            
+        default:
+            break;
     }
-
+    
+    
     
 }
 

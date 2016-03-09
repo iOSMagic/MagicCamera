@@ -32,6 +32,11 @@
 
 +(instancetype)instanceFromStoryBoard:(UIStoryboard*)sb name:(NSString*)name
 {
-    return [sb instantiateViewControllerWithIdentifier:name];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:name];
+    if (!vc) {
+        //如果未找到就尝试直接创建
+        vc = [[self alloc] init];
+    }
+    return vc;
 }
 @end

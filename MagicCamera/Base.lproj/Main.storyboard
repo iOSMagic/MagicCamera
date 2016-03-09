@@ -150,6 +150,24 @@
             </objects>
             <point key="canvasLocation" x="1280" y="1459"/>
         </scene>
+        <!--Video CaptureVC-->
+        <scene sceneID="JOW-Pa-nny">
+            <objects>
+                <viewController storyboardIdentifier="VideoCaptureVC" id="6LM-wr-gh2" customClass="VideoCaptureVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0MG-Ek-rdb"/>
+                        <viewControllerLayoutGuide type="bottom" id="MLX-hs-Ulr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T6R-2G-60G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EMo-uP-A2l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1873" y="1624"/>
+        </scene>
         <!--Filter View Controller-->
         <scene sceneID="sRO-Bk-XU6">
             <objects>
@@ -309,7 +327,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-1b-H3t">
                                                     <rect key="frame" x="19" y="15" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>

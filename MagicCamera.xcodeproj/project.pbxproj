@@ -207,6 +207,7 @@
 		E186DBF01C72C9DD00392C5B /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBEF1C72C9DD00392C5B /* FilterViewController.m */; };
 		E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF21C72C9F400392C5B /* MosaicViewController.m */; };
 		E186DBF61C72CA0700392C5B /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF51C72CA0700392C5B /* FrameViewController.m */; };
+		E1F37C041C8FBE6100DCB52F /* VideoCaptureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -606,6 +607,8 @@
 		E186DBF21C72C9F400392C5B /* MosaicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicViewController.m; sourceTree = "<group>"; };
 		E186DBF41C72CA0700392C5B /* FrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
 		E186DBF51C72CA0700392C5B /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
+		E1F37C021C8FBE6100DCB52F /* VideoCaptureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCaptureVC.h; sourceTree = "<group>"; };
+		E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCaptureVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1068,12 +1071,10 @@
 		E186D9A81C71AAE600392C5B /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E1F37C011C8FBD6900DCB52F /* Main */,
+				E1F37C001C8FBD0B00DCB52F /* AVFoundation */,
 				E152D9E81C89330E00FE2860 /* Core Image */,
 				96D6379A1C803FC0003D8A92 /* Filter */,
-				E186D98D1C71711C00392C5B /* AppDelegate.h */,
-				E186D98E1C71711C00392C5B /* AppDelegate.m */,
-				E186D9901C71711C00392C5B /* ViewController.h */,
-				E186D9911C71711C00392C5B /* ViewController.m */,
 				E186DBE81C71B0FC00392C5B /* EditImageViewController.h */,
 				E186DBE91C71B0FC00392C5B /* EditImageViewController.m */,
 				E186DBEB1C72C9AE00392C5B /* EnhanceViewController.h */,
@@ -1117,6 +1118,26 @@
 				E186D99B1C71711C00392C5B /* LaunchScreen.storyboard */,
 			);
 			name = IB;
+			sourceTree = "<group>";
+		};
+		E1F37C001C8FBD0B00DCB52F /* AVFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				E1F37C021C8FBE6100DCB52F /* VideoCaptureVC.h */,
+				E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */,
+			);
+			name = AVFoundation;
+			sourceTree = "<group>";
+		};
+		E1F37C011C8FBD6900DCB52F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E186D98D1C71711C00392C5B /* AppDelegate.h */,
+				E186D98E1C71711C00392C5B /* AppDelegate.m */,
+				E186D9901C71711C00392C5B /* ViewController.h */,
+				E186D9911C71711C00392C5B /* ViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1283,6 +1304,7 @@
 				E17E4FD51C75C68D008D65E5 /* GPUImageColourFASTFeatureDetector.m in Sources */,
 				E17E502D1C75C68D008D65E5 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
 				E17E4FBA1C75C68D008D65E5 /* GLProgram.m in Sources */,
+				E1F37C041C8FBE6100DCB52F /* VideoCaptureVC.m in Sources */,
 				E186D9981C71711C00392C5B /* MagicCamera.xcdatamodeld in Sources */,
 				E17E503A1C75C68D008D65E5 /* GPUImageShiTomasiFeatureDetectionFilter.m in Sources */,
 				E17E4FD81C75C68D008D65E5 /* GPUImageCropFilter.m in Sources */,
