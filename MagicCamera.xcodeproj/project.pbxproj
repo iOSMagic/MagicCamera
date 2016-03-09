@@ -208,6 +208,7 @@
 		E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF21C72C9F400392C5B /* MosaicViewController.m */; };
 		E186DBF61C72CA0700392C5B /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF51C72CA0700392C5B /* FrameViewController.m */; };
 		E1F37C041C8FBE6100DCB52F /* VideoCaptureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */; };
+		E1F37C071C8FC28B00DCB52F /* PewviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F37C061C8FC28B00DCB52F /* PewviewView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -609,6 +610,8 @@
 		E186DBF51C72CA0700392C5B /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
 		E1F37C021C8FBE6100DCB52F /* VideoCaptureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCaptureVC.h; sourceTree = "<group>"; };
 		E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCaptureVC.m; sourceTree = "<group>"; };
+		E1F37C051C8FC28B00DCB52F /* PewviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PewviewView.h; sourceTree = "<group>"; };
+		E1F37C061C8FC28B00DCB52F /* PewviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PewviewView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1125,6 +1128,8 @@
 			children = (
 				E1F37C021C8FBE6100DCB52F /* VideoCaptureVC.h */,
 				E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */,
+				E1F37C051C8FC28B00DCB52F /* PewviewView.h */,
+				E1F37C061C8FC28B00DCB52F /* PewviewView.m */,
 			);
 			name = AVFoundation;
 			sourceTree = "<group>";
@@ -1330,6 +1335,7 @@
 				E17E4FC61C75C68D008D65E5 /* GPUImageBuffer.m in Sources */,
 				E17E50011C75C68D008D65E5 /* GPUImageHueFilter.m in Sources */,
 				E17E50451C75C68D008D65E5 /* GPUImageStillCamera.m in Sources */,
+				E1F37C071C8FC28B00DCB52F /* PewviewView.m in Sources */,
 				E17E4FE01C75C68D008D65E5 /* GPUImageDissolveBlendFilter.m in Sources */,
 				E17E505B1C75C68D008D65E5 /* GPUImageVignetteFilter.m in Sources */,
 				E17E50521C75C68D008D65E5 /* GPUImageTransformFilter.m in Sources */,
@@ -1525,6 +1531,7 @@
 					"$(PROJECT_DIR)/MagicCamera",
 				);
 				INFOPLIST_FILE = MagicCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-force_load",
@@ -1545,6 +1552,7 @@
 					"$(PROJECT_DIR)/MagicCamera",
 				);
 				INFOPLIST_FILE = MagicCamera/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-force_load",
