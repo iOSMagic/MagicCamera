@@ -14,6 +14,7 @@
 #import "CIEnhanceViewController.h"
 #import "VideoCaptureVC.h"
 #import "AVSEViewController.h"
+#import "WTKit.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
     
@@ -123,7 +124,7 @@
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -143,6 +144,11 @@
         case 2:
         {
             number = 2;
+        }
+            break;
+        case 3:
+        {
+            number = 1;
         }
             break;
             
@@ -176,6 +182,11 @@
             cell.textLabel.text = @[@"录像",@"视频处理"][indexPath.row];
         }
             break;
+        case 3:
+        {
+            cell.textLabel.text = @[@"录像水波"][indexPath.row];
+        }
+            break;
             
         default:
             break;
@@ -186,7 +197,7 @@
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    NSArray *titles = @[@"GPUImage",@"Core Image",@"AVFoundation"];
+    NSArray *titles = @[@"GPUImage",@"Core Image",@"AVFoundation",@"GLKit"];
     return titles[section];
 }
 
@@ -245,6 +256,12 @@
                 AVSEViewController *vc = [[AVSEViewController alloc] initWithNibName:@"AVSEViewController_iPad" bundle:nil];;
                 [self.navigationController pushViewController:vc animated:YES];
             }
+        }
+            break;
+            case 3:
+        {
+            UIViewController *vc = [UIViewController instanceWithName:@"RippleViewController"];
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
             
