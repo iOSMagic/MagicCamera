@@ -20,6 +20,7 @@
 @property (nonatomic) AVCaptureMovieFileOutput *movieFileOutput;
 @property (nonatomic) AVCaptureStillImageOutput *stillImageOutput;
 
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 
 
 @property (nonatomic) AVAuthorizationStatus authorizationStatus;
@@ -101,6 +102,10 @@
     }
     
     return captureDevice;
+}
+
+- (IBAction)recordButtonPressed:(id)sender {
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
