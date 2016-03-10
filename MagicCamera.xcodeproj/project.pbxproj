@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A027A421C9115360058922D /* AVSEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A411C9115360058922D /* AVSEViewController.m */; };
+		5A027A521C9115560058922D /* AVSECommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A451C9115560058922D /* AVSECommand.m */; };
+		5A027A531C9115560058922D /* AVSETrimCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A471C9115560058922D /* AVSETrimCommand.m */; };
+		5A027A541C9115560058922D /* AVSERotateCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A491C9115560058922D /* AVSERotateCommand.m */; };
+		5A027A551C9115560058922D /* AVSECropCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A4B1C9115560058922D /* AVSECropCommand.m */; };
+		5A027A561C9115560058922D /* AVSEAddMusicCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A4D1C9115560058922D /* AVSEAddMusicCommand.m */; };
+		5A027A571C9115560058922D /* AVSEAddWatermarkCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A4F1C9115560058922D /* AVSEAddWatermarkCommand.m */; };
+		5A027A581C9115560058922D /* AVSEExportCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A027A511C9115560058922D /* AVSEExportCommand.m */; };
+		5A027A5B1C9115C30058922D /* war3end.m4v in Resources */ = {isa = PBXBuildFile; fileRef = 5A027A5A1C9115BD0058922D /* war3end.m4v */; };
+		5A027A5C1C9115C60058922D /* Music.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 5A027A591C9115B70058922D /* Music.m4a */; };
+		5A027A5E1C91169C0058922D /* AVSEViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A027A5D1C91169C0058922D /* AVSEViewController_iPad.xib */; };
 		5A0F44A11C7450AA00EED874 /* Masonry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A0F44A01C7450AA00EED874 /* Masonry.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5A0F44A51C74516200EED874 /* PPCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */; };
 		5A0F44A61C74516200EED874 /* PPCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A0F44A41C74516200EED874 /* PPCollectionViewCell.xib */; };
@@ -212,6 +223,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A027A401C9115360058922D /* AVSEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSEViewController.h; sourceTree = "<group>"; };
+		5A027A411C9115360058922D /* AVSEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSEViewController.m; sourceTree = "<group>"; };
+		5A027A441C9115560058922D /* AVSECommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSECommand.h; sourceTree = "<group>"; };
+		5A027A451C9115560058922D /* AVSECommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSECommand.m; sourceTree = "<group>"; };
+		5A027A461C9115560058922D /* AVSETrimCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSETrimCommand.h; sourceTree = "<group>"; };
+		5A027A471C9115560058922D /* AVSETrimCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSETrimCommand.m; sourceTree = "<group>"; };
+		5A027A481C9115560058922D /* AVSERotateCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSERotateCommand.h; sourceTree = "<group>"; };
+		5A027A491C9115560058922D /* AVSERotateCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSERotateCommand.m; sourceTree = "<group>"; };
+		5A027A4A1C9115560058922D /* AVSECropCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSECropCommand.h; sourceTree = "<group>"; };
+		5A027A4B1C9115560058922D /* AVSECropCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSECropCommand.m; sourceTree = "<group>"; };
+		5A027A4C1C9115560058922D /* AVSEAddMusicCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSEAddMusicCommand.h; sourceTree = "<group>"; };
+		5A027A4D1C9115560058922D /* AVSEAddMusicCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSEAddMusicCommand.m; sourceTree = "<group>"; };
+		5A027A4E1C9115560058922D /* AVSEAddWatermarkCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSEAddWatermarkCommand.h; sourceTree = "<group>"; };
+		5A027A4F1C9115560058922D /* AVSEAddWatermarkCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSEAddWatermarkCommand.m; sourceTree = "<group>"; };
+		5A027A501C9115560058922D /* AVSEExportCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVSEExportCommand.h; sourceTree = "<group>"; };
+		5A027A511C9115560058922D /* AVSEExportCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVSEExportCommand.m; sourceTree = "<group>"; };
+		5A027A591C9115B70058922D /* Music.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Music.m4a; sourceTree = "<group>"; };
+		5A027A5A1C9115BD0058922D /* war3end.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = war3end.m4v; sourceTree = "<group>"; };
+		5A027A5D1C91169C0058922D /* AVSEViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AVSEViewController_iPad.xib; sourceTree = "<group>"; };
 		5A0F44A01C7450AA00EED874 /* Masonry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Masonry.framework; sourceTree = "<group>"; };
 		5A0F44A21C74516200EED874 /* PPCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCollectionViewCell.h; sourceTree = "<group>"; };
 		5A0F44A31C74516200EED874 /* PPCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCollectionViewCell.m; sourceTree = "<group>"; };
@@ -626,6 +656,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A027A3F1C9115160058922D /* vidieo Edite */ = {
+			isa = PBXGroup;
+			children = (
+				5A027A5D1C91169C0058922D /* AVSEViewController_iPad.xib */,
+				5A027A5A1C9115BD0058922D /* war3end.m4v */,
+				5A027A591C9115B70058922D /* Music.m4a */,
+				5A027A431C91153F0058922D /* vidieo Tool */,
+				5A027A401C9115360058922D /* AVSEViewController.h */,
+				5A027A411C9115360058922D /* AVSEViewController.m */,
+			);
+			path = "vidieo Edite";
+			sourceTree = "<group>";
+		};
+		5A027A431C91153F0058922D /* vidieo Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5A027A441C9115560058922D /* AVSECommand.h */,
+				5A027A451C9115560058922D /* AVSECommand.m */,
+				5A027A461C9115560058922D /* AVSETrimCommand.h */,
+				5A027A471C9115560058922D /* AVSETrimCommand.m */,
+				5A027A481C9115560058922D /* AVSERotateCommand.h */,
+				5A027A491C9115560058922D /* AVSERotateCommand.m */,
+				5A027A4A1C9115560058922D /* AVSECropCommand.h */,
+				5A027A4B1C9115560058922D /* AVSECropCommand.m */,
+				5A027A4C1C9115560058922D /* AVSEAddMusicCommand.h */,
+				5A027A4D1C9115560058922D /* AVSEAddMusicCommand.m */,
+				5A027A4E1C9115560058922D /* AVSEAddWatermarkCommand.h */,
+				5A027A4F1C9115560058922D /* AVSEAddWatermarkCommand.m */,
+				5A027A501C9115560058922D /* AVSEExportCommand.h */,
+				5A027A511C9115560058922D /* AVSEExportCommand.m */,
+			);
+			name = "vidieo Tool";
+			sourceTree = "<group>";
+		};
 		96D6379A1C803FC0003D8A92 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -1126,6 +1190,7 @@
 		E1F37C001C8FBD0B00DCB52F /* AVFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				5A027A3F1C9115160058922D /* vidieo Edite */,
 				E1F37C021C8FBE6100DCB52F /* VideoCaptureVC.h */,
 				E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */,
 				E1F37C051C8FC28B00DCB52F /* PewviewView.h */,
@@ -1206,7 +1271,10 @@
 				E186D99D1C71711C00392C5B /* LaunchScreen.storyboard in Resources */,
 				E186D99A1C71711C00392C5B /* Assets.xcassets in Resources */,
 				E186D9951C71711C00392C5B /* Main.storyboard in Resources */,
+				5A027A5C1C9115C60058922D /* Music.m4a in Resources */,
+				5A027A5B1C9115C30058922D /* war3end.m4v in Resources */,
 				96D637A81C803FD8003D8A92 /* ShowcaseFilterViewController.xib in Resources */,
+				5A027A5E1C91169C0058922D /* AVSEViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,6 +1288,7 @@
 				E17E50341C75C68D008D65E5 /* GPUImageRGBOpeningFilter.m in Sources */,
 				E17E4FFF1C75C68D008D65E5 /* GPUImageHSBFilter.m in Sources */,
 				E17E505D1C75C68D008D65E5 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
+				5A027A541C9115560058922D /* AVSERotateCommand.m in Sources */,
 				5AF5F3191C8430DF00119099 /* EnhaceModel.m in Sources */,
 				E17E4FDC1C75C68D008D65E5 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				E17E50491C75C68D008D65E5 /* GPUImageTextureInput.m in Sources */,
@@ -1228,6 +1297,7 @@
 				E17E50081C75C68D008D65E5 /* GPUImageLevelsFilter.m in Sources */,
 				E17E4FCB1C75C68D008D65E5 /* GPUImageChromaKeyFilter.m in Sources */,
 				E17E50541C75C68D008D65E5 /* GPUImageTwoInputFilter.m in Sources */,
+				5A027A531C9115560058922D /* AVSETrimCommand.m in Sources */,
 				E17E4FF21C75C68D008D65E5 /* GPUImageGlassSphereFilter.m in Sources */,
 				E17E50251C75C68D008D65E5 /* GPUImagePerlinNoiseFilter.m in Sources */,
 				E17E4FBB1C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m in Sources */,
@@ -1248,6 +1318,7 @@
 				E17E4FFA1C75C68D008D65E5 /* GPUImageHighPassFilter.m in Sources */,
 				E17E504E1C75C68D008D65E5 /* GPUImageThresholdSketchFilter.m in Sources */,
 				E17E50331C75C68D008D65E5 /* GPUImageRGBFilter.m in Sources */,
+				5A027A551C9115560058922D /* AVSECropCommand.m in Sources */,
 				E17E4FBC1C75C68D008D65E5 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				E186D9921C71711C00392C5B /* ViewController.m in Sources */,
 				E17E4FF91C75C68D008D65E5 /* GPUImageHighlightShadowTintFilter.m in Sources */,
@@ -1268,10 +1339,12 @@
 				E17E50581C75C68D008D65E5 /* GPUImageUnsharpMaskFilter.m in Sources */,
 				E17E50601C75C68D008D65E5 /* GPUImageZoomBlurFilter.m in Sources */,
 				E152D9EB1C89333100FE2860 /* CIEnhanceViewController.m in Sources */,
+				5A027A571C9115560058922D /* AVSEAddWatermarkCommand.m in Sources */,
 				E17E4FC01C75C68D008D65E5 /* GPUImageAmatorkaFilter.m in Sources */,
 				E17E4FE11C75C68D008D65E5 /* GPUImageDivideBlendFilter.m in Sources */,
 				E17E505F1C75C68D008D65E5 /* GPUImageXYDerivativeFilter.m in Sources */,
 				E17E4FEC1C75C68D008D65E5 /* GPUImageFramebuffer.m in Sources */,
+				5A027A561C9115560058922D /* AVSEAddMusicCommand.m in Sources */,
 				E17E50381C75C68D008D65E5 /* GPUImageSepiaFilter.m in Sources */,
 				E17E4FF31C75C68D008D65E5 /* GPUImageGrayscaleFilter.m in Sources */,
 				E17E4FF01C75C68D008D65E5 /* GPUImageGaussianBlurPositionFilter.m in Sources */,
@@ -1282,6 +1355,7 @@
 				5A354BDD1C83EE7C0008E418 /* IFInkwellFilter.m in Sources */,
 				E17E4FE51C75C68D008D65E5 /* GPUImageExposureFilter.m in Sources */,
 				E17E4FCA1C75C68D008D65E5 /* GPUImageChromaKeyBlendFilter.m in Sources */,
+				5A027A581C9115560058922D /* AVSEExportCommand.m in Sources */,
 				E17E503D1C75C68D008D65E5 /* GPUImageSkinToneFilter.m in Sources */,
 				5A354BDC1C83EE7C0008E418 /* IFImageFilter.m in Sources */,
 				E17E50371C75C68D008D65E5 /* GPUImageScreenBlendFilter.m in Sources */,
@@ -1342,12 +1416,14 @@
 				E17E4FF41C75C68D008D65E5 /* GPUImageHalftoneFilter.m in Sources */,
 				E17E4FD31C75C68D008D65E5 /* GPUImageColorMatrixFilter.m in Sources */,
 				E186DBF61C72CA0700392C5B /* FrameViewController.m in Sources */,
+				5A027A421C9115360058922D /* AVSEViewController.m in Sources */,
 				96D637A71C803FD8003D8A92 /* ShowcaseFilterViewController.m in Sources */,
 				E17E503E1C75C68D008D65E5 /* GPUImageSmoothToonFilter.m in Sources */,
 				A341A61C1C859A6800D5900D /* MosaicView.m in Sources */,
 				E17E50191C75C68D008D65E5 /* GPUImageMotionDetector.m in Sources */,
 				E17E50631C75C68D008D65E5 /* GPUImagePicture+TextureSubimage.m in Sources */,
 				E17E502A1C75C68D008D65E5 /* GPUImagePolarPixellateFilter.m in Sources */,
+				5A027A521C9115560058922D /* AVSECommand.m in Sources */,
 				E17E50421C75C68D008D65E5 /* GPUImageSolidColorGenerator.m in Sources */,
 				E17E4FBE1C75C68D008D65E5 /* GPUImageAddBlendFilter.m in Sources */,
 				E17E4FD91C75C68D008D65E5 /* GPUImageCrosshairGenerator.m in Sources */,
@@ -1540,6 +1616,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mb.security;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1561,6 +1638,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mb.security;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
