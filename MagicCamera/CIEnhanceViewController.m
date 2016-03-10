@@ -10,7 +10,7 @@
 @import CoreImage;
 @import ImageIO;
 #import "ResultDisplayViewController.h"
-#import "UIViewController+IBHelper.h"
+//#import "UIViewController+IBHelper.h"
 #import "CIModel.h"
 @interface CIEnhanceViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 {

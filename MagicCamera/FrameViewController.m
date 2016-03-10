@@ -8,7 +8,8 @@
 
 #import "FrameViewController.h"
 #import "ResultDisplayViewController.h"
-#import "UIViewController+IBHelper.h"
+//#import "UIViewController+IBHelper.h"
+#import "WTKit.h"
 @interface FrameViewController () <UIGestureRecognizerDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
 {
     

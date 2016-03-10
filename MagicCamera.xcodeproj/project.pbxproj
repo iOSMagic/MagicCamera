@@ -30,7 +30,6 @@
 		A341A61C1C859A6800D5900D /* MosaicView.m in Sources */ = {isa = PBXBuildFile; fileRef = A341A61B1C859A6800D5900D /* MosaicView.m */; };
 		E10604601C8436870017A469 /* MyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E106045F1C8436870017A469 /* MyFilter.m */; };
 		E10604631C8692130017A469 /* ResultDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10604621C8692130017A469 /* ResultDisplayViewController.m */; };
-		E10604671C8692D40017A469 /* UIViewController+IBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E10604661C8692D40017A469 /* UIViewController+IBHelper.m */; };
 		E10C78BF1C91519500AAE763 /* RippleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E10C78BC1C91519500AAE763 /* RippleModel.m */; };
 		E10C78C01C91519500AAE763 /* RippleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E10C78BE1C91519500AAE763 /* RippleViewController.m */; };
 		E10C79C41C91552F00AAE763 /* NSArray+Sort.m in Sources */ = {isa = PBXBuildFile; fileRef = E10C79A01C91552F00AAE763 /* NSArray+Sort.m */; };
@@ -285,8 +284,6 @@
 		E106045F1C8436870017A469 /* MyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFilter.m; sourceTree = "<group>"; };
 		E10604611C8692130017A469 /* ResultDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultDisplayViewController.h; sourceTree = "<group>"; };
 		E10604621C8692130017A469 /* ResultDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultDisplayViewController.m; sourceTree = "<group>"; };
-		E10604651C8692D40017A469 /* UIViewController+IBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IBHelper.h"; sourceTree = "<group>"; };
-		E10604661C8692D40017A469 /* UIViewController+IBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IBHelper.m"; sourceTree = "<group>"; };
 		E10C78BB1C91519500AAE763 /* RippleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RippleModel.h; sourceTree = "<group>"; };
 		E10C78BC1C91519500AAE763 /* RippleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RippleModel.m; sourceTree = "<group>"; };
 		E10C78BD1C91519500AAE763 /* RippleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RippleViewController.h; sourceTree = "<group>"; };
@@ -1285,8 +1282,6 @@
 				E186DBF51C72CA0700392C5B /* FrameViewController.m */,
 				E10604611C8692130017A469 /* ResultDisplayViewController.h */,
 				E10604621C8692130017A469 /* ResultDisplayViewController.m */,
-				E10604651C8692D40017A469 /* UIViewController+IBHelper.h */,
-				E10604661C8692D40017A469 /* UIViewController+IBHelper.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1527,7 +1522,6 @@
 				E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */,
 				E17E4FFE1C75C68D008D65E5 /* GPUImageHoughTransformLineDetector.m in Sources */,
 				E17E50061C75C68D008D65E5 /* GPUImageLanczosResamplingFilter.m in Sources */,
-				E10604671C8692D40017A469 /* UIViewController+IBHelper.m in Sources */,
 				E17E4FD21C75C68D008D65E5 /* GPUImageColorLocalBinaryPatternFilter.m in Sources */,
 				E17E50161C75C68D008D65E5 /* GPUImageMonochromeFilter.m in Sources */,
 				E17E4FE71C75C68D008D65E5 /* GPUImageFASTCornerDetectionFilter.m in Sources */,

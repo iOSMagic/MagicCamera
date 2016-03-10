@@ -10,7 +10,6 @@
 #import "EditImageViewController.h"
 #import "FrameViewController.h"
 #import "ShowcaseFilterListController.h"
-#import "UIViewController+IBHelper.h"
 #import "CIEnhanceViewController.h"
 #import "VideoCaptureVC.h"
 #import "AVSEViewController.h"
