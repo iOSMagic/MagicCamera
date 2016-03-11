@@ -132,17 +132,20 @@
     switch (section) {
         case 0:
         {
+            //GPUImage
             number = [self avalibleEffect].count;
         }
             break;
         case 1:
         {
+            //Core Image
             number = 1;
         }
             break;
         case 2:
         {
-            number = 2;
+            //AVFoundation
+            number = 1;
         }
             break;
         case 3:
