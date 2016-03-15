@@ -82,9 +82,14 @@ static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
 	[[self exportButton] setEnabled:NO];
 
     // Create a AVAsset for the given video from the main bundle
-	NSString *videoURL = [[NSBundle mainBundle] pathForResource:@"war3end" ofType:@"m4v"];
+	NSString *videoPath = [[NSBundle mainBundle] pathForResource:@"war3end" ofType:@"m4v"];
+    NSURL *videoURL = [NSURL fileURLWithPath:videoPath];
+    if (self.fileURL)
+    {
+        videoURL = self.fileURL;
+    }
 //    NSString *videoURL = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:@"output.mp4"];
-	AVAsset *asset = [[AVURLAsset alloc] initWithURL:[NSURL fileURLWithPath:videoURL] options:nil];
+	AVAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
 	// Load the values of AVAsset keys to inspect subsequently
 	NSArray *assetKeysToLoadAndTest = @[@"playable", @"composable", @"tracks", @"duration"];
 	
