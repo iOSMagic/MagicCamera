@@ -63,6 +63,8 @@
 {
 	AVSEExportCommand *exportCommand;
 }
+//文件路径
+@property(nonatomic,strong) NSURL *fileURL;
 
 @property AVPlayer *player;
 @property AVPlayerLayer *playerLayer;

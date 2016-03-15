@@ -10,6 +10,7 @@
 #import "PewviewView.h"
 @import AVFoundation;
 @import Photos;
+#import "AVSEViewController.h"
 @interface VideoCaptureVC () <AVCaptureFileOutputRecordingDelegate>
 
 @property (weak, nonatomic) IBOutlet PewviewView *previewView;
@@ -190,6 +191,13 @@
     UIBackgroundTaskIdentifier currentBackgroundRecordingID = self.backgroundRecordingID;
     self.backgroundRecordingID = UIBackgroundTaskInvalid;
     
+    
+    AVSEViewController *vc = [[AVSEViewController alloc] initWithNibName:@"AVSEViewController_iPad" bundle:nil];
+    vc.fileURL = outputFileURL;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    /*
+    
     dispatch_block_t cleanup = ^{
         [[NSFileManager defaultManager] removeItemAtURL:outputFileURL error:nil];
         if ( currentBackgroundRecordingID != UIBackgroundTaskInvalid ) {
@@ -205,20 +213,31 @@
     }
     
     if (success) {
+        
+//        __block PHObjectPlaceholder *placeHolder = nil;
+        
+        //请求相册状态
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+            //允许调用
             if (status==PHAuthorizationStatusAuthorized) {
+                
+                
+                //准备添加一下信息
                 [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
                     if ( [PHAssetResourceCreationOptions class] ) {
                         PHAssetResourceCreationOptions *options = [[PHAssetResourceCreationOptions alloc] init];
                         options.shouldMoveFile = YES;
                         PHAssetCreationRequest *changeRequest = [PHAssetCreationRequest creationRequestForAsset];
                         [changeRequest addResourceWithType:PHAssetResourceTypeVideo fileURL:outputFileURL options:options];
+//                        placeHolder = changeRequest.placeholderForCreatedAsset;
                     }else{
-                        [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:outputFileURL];
+                        PHAssetChangeRequest *request = [PHAssetChangeRequest creationRequestForAssetFromVideoAtFileURL:outputFileURL];
+//                        placeHolder = request.placeholderForCreatedAsset;
                     }
                     
                     
                 } completionHandler:^(BOOL success, NSError * _Nullable error) {
+                    
                     if ( ! success ) {
                         NSLog( @"Could not save movie to photo library: %@", error );
                     }
@@ -242,6 +261,7 @@
         self.recordButton.enabled = YES;
         [self.recordButton setTitle:@"录制" forState:UIControlStateNormal];
     });
+     */
 }
 
 /*
