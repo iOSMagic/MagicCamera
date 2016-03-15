@@ -118,6 +118,10 @@ static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
 											 selector:@selector(exportCommandCompletionNotificationReceiver:)
 												 name:AVSEExportCommandCompletionNotification
 											   object:nil];
+    if (self.fileURL)
+    {
+        [self movieProcess];
+    }
 }
 
 
@@ -391,6 +395,13 @@ static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
 	}
 	
 	[editCommand performWithAsset:self.inputAsset];
+}
+
+-(void)movieProcess
+{
+   	AVSECommand *editCommand;
+    editCommand = [[AVSERotateCommand alloc] initWithComposition:self.composition videoComposition:self.videoComposition audioMix:self.audioMix];
+    [editCommand performWithAsset:self.inputAsset];
 }
 
 - (IBAction)exportToMovie:(id)sender
