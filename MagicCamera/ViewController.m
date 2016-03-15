@@ -145,7 +145,7 @@
         case 2:
         {
             //AVFoundation
-            number = 1;
+            number = 2;
         }
             break;
         case 3:
