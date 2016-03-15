@@ -364,7 +364,7 @@ static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
 
 - (IBAction)edit:(id)sender
 {
-	int tag = [sender tag];
+	NSInteger tag = [sender tag];
 	// Disable the operation just selected
 	[sender setEnabled:NO];
 	
