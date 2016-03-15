@@ -115,17 +115,6 @@ static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
 											   object:nil];
 }
 
--(NSUInteger)supportedInterfaceOrientations
-{
-	return UIInterfaceOrientationMaskAll;
-}
-
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-	if (self.playerView) {
-		[self updatePlayerLayerSize];
-	}
-}
 
 #pragma mark - Playback
 
