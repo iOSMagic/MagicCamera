@@ -196,7 +196,12 @@ static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 	if (context == AVSEPlayerItemStatusContext) {
-		AVPlayerStatus status = [change[NSKeyValueChangeNewKey] integerValue];
+        NSNumber *number = change[NSKeyValueChangeNewKey];
+        if (![number isKindOfClass:[NSNumber class]])
+        {
+            return;
+        }
+		AVPlayerStatus status = [number integerValue];
 		BOOL enable = NO;
 		switch (status) {
 			case AVPlayerItemStatusUnknown:
@@ -401,4 +406,26 @@ static void *AVSEPlayerLayerReadyForDisplay = &AVSEPlayerLayerReadyForDisplay;
 	[exportCommand performWithAsset:nil];
 }
 
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+-(void)dealloc
+{
+    [self setPlayer:nil];
+    [self removeObserver:self forKeyPath:@"player.currentItem.status"];
+    [self removeObserver:self forKeyPath:@"playerLayer.readyForDisplay"];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(editCommandCompletionNotificationReceiver:)
+//                                                 name:AVSEEditCommandCompletionNotification
+//                                               object:nil];
+//    
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(exportCommandCompletionNotificationReceiver:)
+//                                                 name:AVSEExportCommandCompletionNotification
+//                                               object:nil];
+}
 @end
