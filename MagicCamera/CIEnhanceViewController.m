@@ -10,7 +10,7 @@
 @import CoreImage;
 @import ImageIO;
 #import "ResultDisplayViewController.h"
-//#import "UIViewController+IBHelper.h"
+#import "WTKit.h"
 #import "CIModel.h"
 @interface CIEnhanceViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 {
@@ -180,7 +180,8 @@
 
 -(void)effectWithIndex:(NSInteger)index
 {
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+    
+    [[NSOperationQueue globalQueue] addOperationWithBlock:^{
         CIModel *model = self.modelCollection[index];
         CIContext *context = [CIContext contextWithOptions:nil];               // 1
         CIImage *image = [CIImage imageWithCGImage:self.originalImage.CGImage];               // 2
@@ -190,12 +191,15 @@
         CIImage *result = [filter valueForKey:kCIOutputImageKey];              // 4
         CGRect extent = [result extent];
         CGImageRef cgImage = [context createCGImage:result fromRect:extent];   // 5
-
+        
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             self.imageView.image = [UIImage imageWithCGImage:cgImage];
         }];
-    });
+    }];
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
     
+//    });
+
     
 }
 
