@@ -389,5 +389,23 @@
             </objects>
             <point key="canvasLocation" x="1699" y="2423"/>
         </scene>
+        <!--Custom FilterVC-->
+        <scene sceneID="Vop-gg-IdE">
+            <objects>
+                <viewController id="CF1-31-mRH" customClass="CustomFilterVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D8U-LU-MFP"/>
+                        <viewControllerLayoutGuide type="bottom" id="7yR-Rp-Zgt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bow-TT-7Nd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDh-5W-icw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2369" y="2440"/>
+        </scene>
     </scenes>
 </document>

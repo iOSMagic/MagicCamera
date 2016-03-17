@@ -53,7 +53,7 @@
 		E10C79D81C91567000AAE763 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = E10C79D61C91567000AAE763 /* Shader.fsh */; };
 		E10C79D91C91567000AAE763 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = E10C79D71C91567000AAE763 /* Shader.vsh */; };
 		E152D9EB1C89333100FE2860 /* CIEnhanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E152D9EA1C89333100FE2860 /* CIEnhanceViewController.m */; };
-		E152D9EE1C893EFE00FE2860 /* AutoEnhanceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E152D9ED1C893EFE00FE2860 /* AutoEnhanceVC.m */; };
+		E152D9EE1C893EFE00FE2860 /* CustomFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E152D9ED1C893EFE00FE2860 /* CustomFilterVC.m */; };
 		E152DA141C896D9600FE2860 /* CIModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E152DA131C896D9600FE2860 /* CIModel.m */; };
 		E17E4FBA1C75C68D008D65E5 /* GLProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E601C75C68D008D65E5 /* GLProgram.m */; };
 		E17E4FBB1C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E17E4E631C75C68D008D65E5 /* GPUImage3x3ConvolutionFilter.m */; };
@@ -239,6 +239,13 @@
 		E186DBF01C72C9DD00392C5B /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBEF1C72C9DD00392C5B /* FilterViewController.m */; };
 		E186DBF31C72C9F400392C5B /* MosaicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF21C72C9F400392C5B /* MosaicViewController.m */; };
 		E186DBF61C72CA0700392C5B /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E186DBF51C72CA0700392C5B /* FrameViewController.m */; };
+		E196E85B1C9A4B9B00867AF3 /* ChromaKey.m in Sources */ = {isa = PBXBuildFile; fileRef = E196E8541C9A4B9B00867AF3 /* ChromaKey.m */; };
+		E196E85C1C9A4B9B00867AF3 /* DistortionsDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = E196E8551C9A4B9B00867AF3 /* DistortionsDemo.m */; };
+		E196E85D1C9A4B9B00867AF3 /* OldeFilm.m in Sources */ = {isa = PBXBuildFile; fileRef = E196E8561C9A4B9B00867AF3 /* OldeFilm.m */; };
+		E196E85E1C9A4B9B00867AF3 /* PixellatedPeople.m in Sources */ = {isa = PBXBuildFile; fileRef = E196E8571C9A4B9B00867AF3 /* PixellatedPeople.m */; };
+		E196E85F1C9A4B9B00867AF3 /* PixellateTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = E196E8581C9A4B9B00867AF3 /* PixellateTransition.m */; };
+		E196E8601C9A4B9B00867AF3 /* Sobel.m in Sources */ = {isa = PBXBuildFile; fileRef = E196E8591C9A4B9B00867AF3 /* Sobel.m */; };
+		E196E8611C9A4B9B00867AF3 /* TiltShift.m in Sources */ = {isa = PBXBuildFile; fileRef = E196E85A1C9A4B9B00867AF3 /* TiltShift.m */; };
 		E1F37C041C8FBE6100DCB52F /* VideoCaptureVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */; };
 		E1F37C071C8FC28B00DCB52F /* PewviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F37C061C8FC28B00DCB52F /* PewviewView.m */; };
 /* End PBXBuildFile section */
@@ -329,8 +336,8 @@
 		E10C79D71C91567000AAE763 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
 		E152D9E91C89333100FE2860 /* CIEnhanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIEnhanceViewController.h; sourceTree = "<group>"; };
 		E152D9EA1C89333100FE2860 /* CIEnhanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIEnhanceViewController.m; sourceTree = "<group>"; };
-		E152D9EC1C893EFE00FE2860 /* AutoEnhanceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoEnhanceVC.h; sourceTree = "<group>"; };
-		E152D9ED1C893EFE00FE2860 /* AutoEnhanceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoEnhanceVC.m; sourceTree = "<group>"; };
+		E152D9EC1C893EFE00FE2860 /* CustomFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomFilterVC.h; sourceTree = "<group>"; };
+		E152D9ED1C893EFE00FE2860 /* CustomFilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomFilterVC.m; sourceTree = "<group>"; };
 		E152DA121C896D9600FE2860 /* CIModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIModel.h; sourceTree = "<group>"; };
 		E152DA131C896D9600FE2860 /* CIModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIModel.m; sourceTree = "<group>"; };
 		E17E4E5F1C75C68D008D65E5 /* GLProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLProgram.h; sourceTree = "<group>"; };
@@ -700,6 +707,13 @@
 		E186DBF21C72C9F400392C5B /* MosaicViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MosaicViewController.m; sourceTree = "<group>"; };
 		E186DBF41C72CA0700392C5B /* FrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
 		E186DBF51C72CA0700392C5B /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
+		E196E8541C9A4B9B00867AF3 /* ChromaKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChromaKey.m; sourceTree = "<group>"; };
+		E196E8551C9A4B9B00867AF3 /* DistortionsDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistortionsDemo.m; sourceTree = "<group>"; };
+		E196E8561C9A4B9B00867AF3 /* OldeFilm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldeFilm.m; sourceTree = "<group>"; };
+		E196E8571C9A4B9B00867AF3 /* PixellatedPeople.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixellatedPeople.m; sourceTree = "<group>"; };
+		E196E8581C9A4B9B00867AF3 /* PixellateTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PixellateTransition.m; sourceTree = "<group>"; };
+		E196E8591C9A4B9B00867AF3 /* Sobel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sobel.m; sourceTree = "<group>"; };
+		E196E85A1C9A4B9B00867AF3 /* TiltShift.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TiltShift.m; sourceTree = "<group>"; };
 		E1F37C021C8FBE6100DCB52F /* VideoCaptureVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCaptureVC.h; sourceTree = "<group>"; };
 		E1F37C031C8FBE6100DCB52F /* VideoCaptureVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCaptureVC.m; sourceTree = "<group>"; };
 		E1F37C051C8FC28B00DCB52F /* PewviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PewviewView.h; sourceTree = "<group>"; };
@@ -830,12 +844,13 @@
 		E152D9E81C89330E00FE2860 /* Core Image */ = {
 			isa = PBXGroup;
 			children = (
+				E196E8531C9A4B5800867AF3 /* CustomFilters */,
 				E152DA121C896D9600FE2860 /* CIModel.h */,
 				E152DA131C896D9600FE2860 /* CIModel.m */,
 				E152D9E91C89333100FE2860 /* CIEnhanceViewController.h */,
 				E152D9EA1C89333100FE2860 /* CIEnhanceViewController.m */,
-				E152D9EC1C893EFE00FE2860 /* AutoEnhanceVC.h */,
-				E152D9ED1C893EFE00FE2860 /* AutoEnhanceVC.m */,
+				E152D9EC1C893EFE00FE2860 /* CustomFilterVC.h */,
+				E152D9ED1C893EFE00FE2860 /* CustomFilterVC.m */,
 			);
 			name = "Core Image";
 			sourceTree = "<group>";
@@ -1306,6 +1321,20 @@
 			name = IB;
 			sourceTree = "<group>";
 		};
+		E196E8531C9A4B5800867AF3 /* CustomFilters */ = {
+			isa = PBXGroup;
+			children = (
+				E196E8541C9A4B9B00867AF3 /* ChromaKey.m */,
+				E196E8551C9A4B9B00867AF3 /* DistortionsDemo.m */,
+				E196E8561C9A4B9B00867AF3 /* OldeFilm.m */,
+				E196E8571C9A4B9B00867AF3 /* PixellatedPeople.m */,
+				E196E8581C9A4B9B00867AF3 /* PixellateTransition.m */,
+				E196E8591C9A4B9B00867AF3 /* Sobel.m */,
+				E196E85A1C9A4B9B00867AF3 /* TiltShift.m */,
+			);
+			name = CustomFilters;
+			sourceTree = "<group>";
+		};
 		E1F37C001C8FBD0B00DCB52F /* AVFoundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1426,6 +1455,7 @@
 				E17E501D1C75C68D008D65E5 /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				E17E4FCE1C75C68D008D65E5 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				E17E4FDF1C75C68D008D65E5 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
+				E196E8601C9A4B9B00867AF3 /* Sobel.m in Sources */,
 				E17E4FDD1C75C68D008D65E5 /* GPUImageDilationFilter.m in Sources */,
 				E17E50041C75C68D008D65E5 /* GPUImageKuwaharaFilter.m in Sources */,
 				E17E50591C75C68D008D65E5 /* GPUImageVibranceFilter.m in Sources */,
@@ -1483,6 +1513,7 @@
 				5A027A581C9115560058922D /* AVSEExportCommand.m in Sources */,
 				E17E503D1C75C68D008D65E5 /* GPUImageSkinToneFilter.m in Sources */,
 				E10C79D11C91552F00AAE763 /* WTDataSaver.m in Sources */,
+				E196E85C1C9A4B9B00867AF3 /* DistortionsDemo.m in Sources */,
 				5A354BDC1C83EE7C0008E418 /* IFImageFilter.m in Sources */,
 				E17E50371C75C68D008D65E5 /* GPUImageScreenBlendFilter.m in Sources */,
 				E17E50231C75C68D008D65E5 /* GPUImageOverlayBlendFilter.m in Sources */,
@@ -1504,11 +1535,13 @@
 				E10C79CD1C91552F00AAE763 /* UINavigationController+Nice.m in Sources */,
 				E17E500A1C75C68D008D65E5 /* GPUImageLinearBurnBlendFilter.m in Sources */,
 				E10C79C41C91552F00AAE763 /* NSArray+Sort.m in Sources */,
+				E196E85F1C9A4B9B00867AF3 /* PixellateTransition.m in Sources */,
 				E17E50361C75C68D008D65E5 /* GPUImageSaturationFilter.m in Sources */,
 				E17E502F1C75C68D008D65E5 /* GPUImageRawDataOutput.m in Sources */,
 				E17E4FBF1C75C68D008D65E5 /* GPUImageAlphaBlendFilter.m in Sources */,
 				E17E504C1C75C68D008D65E5 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				E17E4FE41C75C68D008D65E5 /* GPUImageExclusionBlendFilter.m in Sources */,
+				E196E85E1C9A4B9B00867AF3 /* PixellatedPeople.m in Sources */,
 				E186D98F1C71711C00392C5B /* AppDelegate.m in Sources */,
 				E17E4FD51C75C68D008D65E5 /* GPUImageColourFASTFeatureDetector.m in Sources */,
 				E17E502D1C75C68D008D65E5 /* GPUImagePrewittEdgeDetectionFilter.m in Sources */,
@@ -1534,10 +1567,11 @@
 				E17E501E1C75C68D008D65E5 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
 				E17E503C1C75C68D008D65E5 /* GPUImageSketchFilter.m in Sources */,
 				E17E50091C75C68D008D65E5 /* GPUImageLightenBlendFilter.m in Sources */,
-				E152D9EE1C893EFE00FE2860 /* AutoEnhanceVC.m in Sources */,
+				E152D9EE1C893EFE00FE2860 /* CustomFilterVC.m in Sources */,
 				E186DBF01C72C9DD00392C5B /* FilterViewController.m in Sources */,
 				E17E4FC61C75C68D008D65E5 /* GPUImageBuffer.m in Sources */,
 				E17E50011C75C68D008D65E5 /* GPUImageHueFilter.m in Sources */,
+				E196E85D1C9A4B9B00867AF3 /* OldeFilm.m in Sources */,
 				E17E50451C75C68D008D65E5 /* GPUImageStillCamera.m in Sources */,
 				E1F37C071C8FC28B00DCB52F /* PewviewView.m in Sources */,
 				E17E4FE01C75C68D008D65E5 /* GPUImageDissolveBlendFilter.m in Sources */,
@@ -1550,6 +1584,7 @@
 				5A027A421C9115360058922D /* AVSEViewController.m in Sources */,
 				96D637A71C803FD8003D8A92 /* ShowcaseFilterViewController.m in Sources */,
 				E17E503E1C75C68D008D65E5 /* GPUImageSmoothToonFilter.m in Sources */,
+				E196E8611C9A4B9B00867AF3 /* TiltShift.m in Sources */,
 				E10C79D41C91552F00AAE763 /* WTNetWorkManager.m in Sources */,
 				A341A61C1C859A6800D5900D /* MosaicView.m in Sources */,
 				E17E50191C75C68D008D65E5 /* GPUImageMotionDetector.m in Sources */,
@@ -1575,6 +1610,7 @@
 				E17E50461C75C68D008D65E5 /* GPUImageStretchDistortionFilter.m in Sources */,
 				E17E4FEE1C75C68D008D65E5 /* GPUImageGammaFilter.m in Sources */,
 				E17E50391C75C68D008D65E5 /* GPUImageSharpenFilter.m in Sources */,
+				E196E85B1C9A4B9B00867AF3 /* ChromaKey.m in Sources */,
 				E10C79D21C91552F00AAE763 /* WTImageViewer.m in Sources */,
 				E17E4FF81C75C68D008D65E5 /* GPUImageHighlightShadowFilter.m in Sources */,
 				E17E4FD41C75C68D008D65E5 /* GPUImageColorPackingFilter.m in Sources */,

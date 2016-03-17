@@ -6,14 +6,14 @@
 //  Copyright © 2016 SongWentong. All rights reserved.
 //
 
-#import "AutoEnhanceVC.h"
+#import "CustomFilterVC.h"
 @import CoreImage;
 @import ImageIO;
-@interface AutoEnhanceVC ()
+@interface CustomFilterVC ()
 
 @end
 
-@implementation AutoEnhanceVC
+@implementation CustomFilterVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

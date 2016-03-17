@@ -68,6 +68,15 @@
     model = [CIModel new];
     model.filterName = @"CIColorCrossPolynomial";
     model.desc = @"颜色调整";
+    const CGFloat inputRedCoefficients[] ={1,0,1,1,1,1,1,1,1,1};
+    [model.inputs setValue:[CIVector vectorWithValues:inputRedCoefficients count:10] forKey:@"inputRedCoefficients"];
+    
+    const CGFloat inputGreenCoefficients[] ={0,1,0,0,0,0,0,0,0,0};
+    [model.inputs setValue:[CIVector vectorWithValues:inputGreenCoefficients count:10] forKey:@"inputGreenCoefficients"];
+    
+    const CGFloat inputBlueCoefficients[] ={0,0,1,0,0,0,0,0,0,0};
+    [model.inputs setValue:[CIVector vectorWithValues:inputBlueCoefficients count:10] forKey:@"inputBlueCoefficients"];
+    
     [_modelCollection addObject:model];
     
     

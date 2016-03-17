@@ -13,6 +13,7 @@
 #import "CIEnhanceViewController.h"
 #import "VideoCaptureVC.h"
 #import "AVSEViewController.h"
+#import "CustomFilterVC.h"
 #import "WTKit.h"
 @interface ViewController () <UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 {
@@ -139,7 +140,7 @@
         case 1:
         {
             //Core Image
-            number = 1;
+            number = 2;
         }
             break;
         case 2:
@@ -176,7 +177,7 @@
             break;
         case 1:
         {
-            cell.textLabel.text = @[@"照片",@"视频"][indexPath.row];
+            cell.textLabel.text = @[@"照片处理",@"自定义滤镜"][indexPath.row];
         }
             break;
         case 2:
@@ -235,13 +236,35 @@
             break;
         case 1:
         {
-            if (_autoSelectPhoto) {
-                CIEnhanceViewController *vc = [CIEnhanceViewController instanceFromIB];
-                vc.originalImage = [UIImage imageNamed:@"Image"];
-                [self.navigationController pushViewController:vc animated:YES];
-            }else{
-                [self pickPhoto];
+            switch (indexPath.row) {
+                case 0:
+                {
+                    //AVFoundation
+                    if (_autoSelectPhoto) {
+                        CIEnhanceViewController *vc = [CIEnhanceViewController instanceFromIB];
+                        vc.originalImage = [UIImage imageNamed:@"Image"];
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }else{
+                        [self pickPhoto];
+                    }
+                }
+                    break;
+                case 1:
+                {
+                    if (_autoSelectPhoto) {
+                        CustomFilterVC *vc = [UIViewController instanceFromStoryBoardName:@"CustomFilterVC"];
+                        [self.navigationController pushViewController:vc animated:YES];
+                    }else{
+                        
+                    }
+                }
+                    break;
+                    
+                    
+                default:
+                    break;
             }
+
             
         }
             break;

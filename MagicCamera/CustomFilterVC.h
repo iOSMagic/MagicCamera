@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "EditImageViewController.h"
-@interface AutoEnhanceVC : EditImageViewController
+@interface CustomFilterVC : EditImageViewController
 
 @end
