@@ -252,7 +252,8 @@
                 case 1:
                 {
                     if (_autoSelectPhoto) {
-                        CustomFilterVC *vc = [UIViewController instanceFromStoryBoardName:@"CustomFilterVC"];
+                        CustomFilterVC *vc = [CustomFilterVC instanceFromIB];
+                        vc.originalImage = [UIImage imageNamed:@"Image"];
                         [self.navigationController pushViewController:vc animated:YES];
                     }else{
                         
